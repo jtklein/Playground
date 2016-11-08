@@ -6,4 +6,7 @@
     <dimen name="material_margin_half_first_tier">8dp</dimen>
     <dimen name="material_margin_first_tier">16dp</dimen>
     <dimen name="material_margin_second_tier">72dp</dimen>
+    <!-- Text sizes. -->
+    <dimen name="text_size_big">20sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
 </resources>
