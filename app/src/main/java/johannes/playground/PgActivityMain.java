@@ -15,13 +15,13 @@ public class PgActivityMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_main);
 
-        mButton = (Button) findViewById(R.id.buttonImplicitIntents);
+        mButton = (Button) findViewById(R.id.buttonIntents);
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(view.getContext(), PgActivityImplicitIntents.class);
+                Intent intent = new Intent(view.getContext(), PgActivityIntents.class);
                 startActivity(intent);
             }
         });
