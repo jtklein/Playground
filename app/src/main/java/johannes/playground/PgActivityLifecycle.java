@@ -2,6 +2,7 @@ package johannes.playground;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class PgActivityLifecycle extends AppCompatActivity {
 
@@ -10,5 +11,11 @@ public class PgActivityLifecycle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_lifecycle);
 
+        displayStatus();
+    }
+
+    private void displayStatus() {
+        // Display Toast
+        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
     }
 }
