@@ -2,4 +2,13 @@
     <string name="app_name">Playground</string>
 
     <string name="ui_implicit_intent">Implicit intents</string>
+    <string name="ui_start_implicit_intent">Start Implicit Intents</string>
+
+    <string-array name="implicit_intents">
+        <item>Open website</item>
+        <item>Make call</item>
+        <item>Open Map</item>
+        <item>Take picture</item>
+    </string-array>
+
 </resources>
