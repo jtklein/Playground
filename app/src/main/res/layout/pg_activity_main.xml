@@ -13,8 +13,8 @@
 
     <Button
         style="@style/PrimaryButton"
-        android:id="@+id/buttonImplicitIntents"
-        android:text="@string/ui_implicit_intent"
+        android:id="@+id/buttonIntents"
+        android:text="@string/ui_intents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
