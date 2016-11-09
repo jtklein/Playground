@@ -29,9 +29,22 @@ public class PgActivityImplicitIntents extends AppCompatActivity {
             public void onClick(View view) {
                 Intent implicitIntent = null;
                 if (implicitIntent != null){
+                    if (isIntentAvailable(implicitIntent)){
                         startActivity(implicitIntent);
+
+                    } else {
+                        // TODO UX
+
+                    }
                 }
             }
         });
+    }
+
+    public boolean isIntentAvailable(Intent intent){
+        PackageManager packageManager = getPackageManager();
+        List<ResolveInfo> activities = packageManager.queryIntentActivities(intent,0);
+        boolean isIntentSafe = activities.size() > 0;
+        return isIntentSafe;
     }
 }
