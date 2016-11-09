@@ -8,16 +8,16 @@ import android.widget.Button;
 
 public class PgActivityMain extends AppCompatActivity {
 
-    private Button buttonImplicitIntents;
+    private Button mButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_main);
 
-        buttonImplicitIntents = (Button) findViewById(R.id.buttonImplicitIntents);
+        mButton = (Button) findViewById(R.id.buttonImplicitIntents);
 
-        buttonImplicitIntents.setOnClickListener(new View.OnClickListener() {
+        mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
