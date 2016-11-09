@@ -6,7 +6,7 @@
     <string name="ui_start_implicit_intents">Start Implicit Intents</string>
     <string name="ui_intent_extras">Intent Extras</string>
     <string name="ui_send_int">Send int</string>
-    <string name="ui_receiving_int">Receiving int:</string>
+    <string name="ui_received_int">Received int:</string>
 
     <string-array name="implicit_intents">
         <item>Open website</item>
