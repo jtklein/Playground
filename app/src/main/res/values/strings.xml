@@ -9,6 +9,8 @@
     <string name="ui_received_int">Received int:</string>
     <string name="ui_activities">Activities</string>
     <string name="ui_activity_lifecycle">Activity Lifecycle</string>
+    <string name="ui_views">Views</string>
+    <string name="ui_listview">ListView</string>
 
     <string-array name="implicit_intents">
         <item>Open website</item>
