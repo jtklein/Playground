@@ -6,6 +6,8 @@ import android.widget.Toast;
 
 public class PgActivityLifecycle extends AppCompatActivity {
 
+    int mOrder = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,7 +17,11 @@ public class PgActivityLifecycle extends AppCompatActivity {
     }
 
     private void displayStatus() {
+        //Create String
+        mOrder++;
+        String toastText = String.valueOf(mOrder) + ") Activity is in: " + "onCreate";
+
         // Display Toast
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, toastText, Toast.LENGTH_SHORT).show();
     }
 }
