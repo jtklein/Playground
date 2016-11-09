@@ -36,4 +36,14 @@
         <item name="android:layout_marginBottom">@dimen/material_margin_first_tier</item>
     </style>
 
+    <!-- Custom header text view -->
+    <style name="HeaderTextView" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/text_size_huge</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:padding">@dimen/material_margin_first_tier</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
 </resources>
