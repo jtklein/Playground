@@ -21,27 +21,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".PgActivityImplicitIntents"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".PgActivityIntents"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".PgActivitySendIntentExtras"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".PgActivityReceiveIntentExtras"
             android:exported="false"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".PgActivityActivities"
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
