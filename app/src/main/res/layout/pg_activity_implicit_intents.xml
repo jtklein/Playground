@@ -19,6 +19,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_big" />
+
     <Spinner
         android:id="@+id/spinnerImplicitIntents"
         android:textAlignment="center"
@@ -32,9 +36,8 @@
         style="@style/PrimaryButton"
         android:id="@+id/buttonStartImplicitIntents"
         android:text="@string/ui_start_implicit_intent"
+        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-
 
 </LinearLayout>
