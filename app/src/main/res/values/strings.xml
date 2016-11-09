@@ -5,6 +5,7 @@
     <string name="ui_intents">Intents</string>
     <string name="ui_start_implicit_intents">Start Implicit Intents</string>
     <string name="ui_intent_extras">Intent Extras</string>
+    <string name="ui_send_int">Send int</string>
 
     <string-array name="implicit_intents">
         <item>Open website</item>
