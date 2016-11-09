@@ -12,11 +12,8 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <TextView
+        style="@style/HeaderTextView"
         android:text="@string/ui_activity_lifecycle"
-        android:textSize="@dimen/text_size_huge"
-        android:textColor="@color/colorBlack"
-        android:padding="@dimen/material_margin_first_tier"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
