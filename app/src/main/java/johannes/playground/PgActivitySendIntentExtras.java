@@ -29,17 +29,19 @@ public class PgActivitySendIntentExtras extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Make sure there is input
+                if (mEditText.getText().length() > 0){
+                    // Get the number from edit Text
+                    int input = 0;
+                    input =  Integer.valueOf(mEditText.getText().toString());
 
-                // Get the number from edit Text
-                // TODO make sure there is input in EditText
-                int input = 0;
-                input =  Integer.valueOf(mEditText.getText().toString());
-
-                // Create intent for receiver activity with extra
-                Intent intent = new Intent(view.getContext(), PgActivityReceiveIntentExtras.class);
-                intent.putExtra(KEY_FOR_INTENT_INT, input);
-                startActivity(intent);
-
+                    // Create intent for receiver activity with extra
+                    Intent intent = new Intent(view.getContext(), PgActivityReceiveIntentExtras.class);
+                    intent.putExtra(KEY_FOR_INTENT_INT, input);
+                    startActivity(intent);
+                } else {
+                    //TODO UX
+                }
             }
         });
     }

@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import java.util.List;
+
 /**
  * Created by johannesklein on 09.11.16.
  */
