@@ -13,7 +13,7 @@ import android.widget.EditText;
  */
 public class PgActivitySendIntentExtras extends AppCompatActivity {
 
-    private static final String KEY_FOR_INTENT_INT = "KEY_FOR_INTENT_INT";
+    public static final String KEY_FOR_INTENT_INT = "KEY_FOR_INTENT_INT";
 
     private EditText mEditText = null;
     private Button mButton = null;
@@ -31,6 +31,7 @@ public class PgActivitySendIntentExtras extends AppCompatActivity {
             public void onClick(View view) {
 
                 // Get the number from edit Text
+                // TODO make sure there is input in EditText
                 int input = 0;
                 input =  Integer.valueOf(mEditText.getText().toString());
 
