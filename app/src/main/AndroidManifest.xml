@@ -43,6 +43,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".PgActivityLifecycle"
+            android:exported="false" />
+        <activity
+            android:name=".PgActivityViews"
             android:exported="false"
             android:screenOrientation="portrait" />
     </application>
