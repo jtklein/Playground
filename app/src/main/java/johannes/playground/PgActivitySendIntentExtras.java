@@ -1,5 +1,6 @@
 package johannes.playground;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import android.widget.EditText;
  * Created by johannesklein on 09.11.16.
  */
 public class PgActivitySendIntentExtras extends AppCompatActivity {
+
+    private static final String KEY_FOR_INTENT_INT = "KEY_FOR_INTENT_INT";
 
     private EditText mEditText = null;
     private Button mButton = null;
@@ -26,6 +29,16 @@ public class PgActivitySendIntentExtras extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // Get the number from edit Text
+                int input = 0;
+                input =  Integer.valueOf(mEditText.getText().toString());
+
+                // Create intent for receiver activity with extra
+                Intent intent = new Intent(view.getContext(), PgActivityReceiveIntentExtras.class);
+                intent.putExtra(KEY_FOR_INTENT_INT, input);
+                startActivity(intent);
+
             }
         });
     }
