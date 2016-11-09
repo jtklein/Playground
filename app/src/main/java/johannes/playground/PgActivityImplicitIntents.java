@@ -1,6 +1,9 @@
 package johannes.playground;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -27,7 +30,31 @@ public class PgActivityImplicitIntents extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int position = mSpinner.getSelectedItemPosition();
                 Intent implicitIntent = null;
+
+                switch (position){
+                    case 0:
+                        // open web browser
+                        implicitIntent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("http://google.com"));
+                        break;
+                    case 1:
+                        // make phone call
+                        implicitIntent = new Intent(Intent.ACTION_DIAL,
+                                Uri.parse("tel:(+012)3456789"));
+                        break;
+                    case 2:
+                        // open map
+                        implicitIntent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("geo:45.2345, 20.2345"));
+                        break;
+                    case 3:
+                        // take picture
+                        implicitIntent = new Intent("android.media.action.IMAGE_CAPTURE");
+                        break;
+                }
+
                 if (implicitIntent != null){
                     if (isIntentAvailable(implicitIntent)){
                         startActivity(implicitIntent);
