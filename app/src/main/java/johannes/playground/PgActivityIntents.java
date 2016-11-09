@@ -8,23 +8,38 @@ import android.widget.Button;
 
 public class PgActivityIntents extends AppCompatActivity {
 
-    private Button mButton = null;
+    private Button mButtonImplicitIntents = null;
+    private Button mButtonIntentExtras = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_intents);
 
-        mButton = (Button) findViewById(R.id.buttonImplicitIntents);
-
-        mButton.setOnClickListener(new View.OnClickListener() {
+        // Button to go to implicit intents
+        mButtonImplicitIntents = (Button) findViewById(R.id.buttonImplicitIntents);
+        mButtonImplicitIntents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                // Simple intent to go to activity
                 Intent intent = new Intent(view.getContext(), PgActivityImplicitIntents.class);
                 startActivity(intent);
             }
         });
+
+        // Button to go to intent extras
+        mButtonIntentExtras = (Button) findViewById(R.id.buttonIntentExtras);
+        mButtonIntentExtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple intent to go to activity
+                Intent intent = new Intent(view.getContext(), PgActivitySendIntentExtras.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
     }
 }
