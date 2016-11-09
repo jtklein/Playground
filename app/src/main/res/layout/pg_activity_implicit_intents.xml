@@ -12,7 +12,7 @@
 
     <TextView
         android:text="@string/ui_implicit_intent"
-        android:textSize="@dimen/text_size_big"
+        android:textSize="@dimen/text_size_huge"
         android:textColor="@color/colorBlack"
         android:padding="@dimen/material_margin_first_tier"
         android:gravity="center"

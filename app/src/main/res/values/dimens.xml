@@ -9,6 +9,7 @@
     <dimen name="material_margin_second_tier">72dp</dimen>
 
     <!-- Text sizes. -->
+    <dimen name="text_size_huge">32sp</dimen>
     <dimen name="text_size_big">20sp</dimen>
     <dimen name="text_size_small">12sp</dimen>
 </resources>
