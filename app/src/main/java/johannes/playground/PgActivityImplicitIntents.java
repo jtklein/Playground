@@ -1,5 +1,6 @@
 package johannes.playground;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -26,6 +27,11 @@ public class PgActivityImplicitIntents extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent implicitIntent = null;
+                if (implicitIntent != null){
+                        startActivity(implicitIntent);
+                }
+            }
         });
     }
 }
