@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Playground</string>
-    <string name="implicit_intent">Implicit intents</string>
+
+    <string name="ui_implicit_intent">Implicit intents</string>
 </resources>
