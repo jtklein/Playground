@@ -10,6 +10,7 @@ public class PgActivityMain extends AppCompatActivity {
 
     private Button mButtonActivities = null;
     private Button mButtonIntents = null;
+    private Button mButtonViews = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,17 @@ public class PgActivityMain extends AppCompatActivity {
             public void onClick(View view) {
                 // Simple explicit intent
                 Intent intent = new Intent(view.getContext(), PgActivityIntents.class);
+                startActivity(intent);
+            }
+        });
+
+        // The button to go to view playground
+        mButtonViews = (Button) findViewById(R.id.buttonViews);
+        mButtonViews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityViews.class);
                 startActivity(intent);
             }
         });
