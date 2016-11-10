@@ -11,13 +11,17 @@ import android.widget.ListView;
  */
 public class PgActivityListView extends AppCompatActivity {
 
-    private String[] mData = new String[]{
-            "test1",
-            "test2",
-            "test3",
-            "test4",
-            "test5",
-            "test6",
+    private PgListViewExampleItem[] mData = new PgListViewExampleItem[]{
+            new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),
+            new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),
+            new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),
+            new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),
+            new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),
+            new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),
+            new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),
+            new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),
+            new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),
+            new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),
     };
 
     private ListView mListView = null;
