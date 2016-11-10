@@ -30,16 +30,35 @@ public class PgListViewExampleAdapter extends ArrayAdapter<PgListViewExampleItem
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        View row = inflater.inflate(mLayoutResourceId, parent, false);
+        /*
+                            Using the holder pattern
+         */
+        // Save View;
+        View row = convertView;
 
+        // Create a holder reference
+        PgListViewExampleItemHolder holder = null;
+
+        // Inflate the layout
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        row = inflater.inflate(mLayoutResourceId, parent, false);
+
+        // Get the layout elements
         TextView textViewHeader = (TextView) row.findViewById(R.id.textViewRowHeader);
         TextView textViewBody = (TextView) row.findViewById(R.id.textViewRowBody);
 
+        // Get the data and display
         PgListViewExampleItem item = mData[position];
         textViewHeader.setText(item.header);
         textViewBody.setText(item.body);
 
+        // Return the view
         return row;
+    }
+
+    private static class PgListViewExampleItemHolder {
+        TextView textViewHeader;
+        TextView textViewBody;
+
     }
 }
