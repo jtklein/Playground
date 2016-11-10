@@ -25,7 +25,8 @@ public class PgActivityListView extends AppCompatActivity {
     };
 
     private ListView mListView = null;
-    private ArrayAdapter<String> mAdapter;
+
+    private PgListViewExampleAdapter mAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class PgActivityListView extends AppCompatActivity {
 
         mListView = (ListView) findViewById(R.id.listView);
 
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mData);
+        mAdapter = new PgListViewExampleAdapter(this, R.layout.pg_listview_item, mData);
 
         if (mAdapter != null){
             mListView.setAdapter(mAdapter);
