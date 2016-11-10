@@ -39,13 +39,25 @@ public class PgListViewExampleAdapter extends ArrayAdapter<PgListViewExampleItem
         // Create a holder reference
         PgListViewExampleItemHolder holder = null;
 
-        // Inflate the layout
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        row = inflater.inflate(mLayoutResourceId, parent, false);
+        // If we currently don't have a row, inflate one, add holder as tag
+        if (row == null){
+            // Inflate the layout
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+            row = inflater.inflate(mLayoutResourceId, parent, false);
 
-        // Get the layout elements
-        TextView textViewHeader = (TextView) row.findViewById(R.id.textViewRowHeader);
-        TextView textViewBody = (TextView) row.findViewById(R.id.textViewRowBody);
+            holder = new PgListViewExampleItemHolder();
+
+            // Get the layout elements
+            holder.textViewHeader = (TextView) row.findViewById(R.id.textViewRowHeader);
+            holder.textViewBody = (TextView) row.findViewById(R.id.textViewRowBody);
+
+            // Add the holder as tag
+            row.setTag(holder);
+
+        } else {
+
+
+        }
 
         // Get the data and display
         PgListViewExampleItem item = mData[position];
