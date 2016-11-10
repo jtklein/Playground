@@ -26,4 +26,20 @@ public class PgListViewExampleAdapter extends ArrayAdapter<PgListViewExampleItem
         this.mLayoutResourceId = resource;
         this.mData = objects;
     }
+
+    @NonNull
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        View row = inflater.inflate(mLayoutResourceId, parent, false);
+
+        TextView textViewHeader = (TextView) row.findViewById(R.id.textViewRowHeader);
+        TextView textViewBody = (TextView) row.findViewById(R.id.textViewRowBody);
+
+        PgListViewExampleItem item = mData[position];
+        textViewHeader.setText(item.header);
+        textViewBody.setText(item.body);
+
+        return row;
+    }
 }
