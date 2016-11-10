@@ -21,9 +21,8 @@
         android:layout_height="@dimen/text_size_big" />
 
     <Spinner
+        style="@style/PrimarySpinner"
         android:id="@+id/spinnerImplicitIntents"
-        android:textAlignment="center"
-        android:scrollbarSize="@dimen/material_margin_first_tier"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/implicit_intents">
