@@ -11,6 +11,7 @@ public class PgActivityMain extends AppCompatActivity {
     private Button mButtonActivities = null;
     private Button mButtonIntents = null;
     private Button mButtonViews = null;
+    private Button mButtonPersistance = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,17 @@ public class PgActivityMain extends AppCompatActivity {
             public void onClick(View view) {
                 // Simple explicit intent
                 Intent intent = new Intent(view.getContext(), PgActivityViews.class);
+                startActivity(intent);
+            }
+        });
+
+        // The button to go to persistance playground
+        mButtonPersistance = (Button) findViewById(R.id.buttonPersistance);
+        mButtonPersistance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityPersistance.class);
                 startActivity(intent);
             }
         });
