@@ -55,14 +55,15 @@ public class PgListViewExampleAdapter extends ArrayAdapter<PgListViewExampleItem
             row.setTag(holder);
 
         } else {
-
+            // Else use an existing holder
+            holder = (PgListViewExampleItemHolder) row.getTag();
 
         }
 
         // Get the data and display
         PgListViewExampleItem item = mData[position];
-        textViewHeader.setText(item.header);
-        textViewBody.setText(item.body);
+        holder.textViewHeader.setText(item.header);
+        holder.textViewBody.setText(item.body);
 
         // Return the view
         return row;
