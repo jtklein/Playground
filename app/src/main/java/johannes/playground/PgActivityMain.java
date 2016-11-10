@@ -12,6 +12,7 @@ public class PgActivityMain extends AppCompatActivity {
     private Button mButtonIntents = null;
     private Button mButtonViews = null;
     private Button mButtonPersistance = null;
+    private Button mButtonData = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,14 @@ public class PgActivityMain extends AppCompatActivity {
             }
         });
 
-
+        // The button to go to data playground
+        mButtonData = (Button) findViewById(R.id.buttonData);
+        mButtonData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), PgActivityData.class);
+                startActivity(intent);
+            }
+        });
     }
 }
