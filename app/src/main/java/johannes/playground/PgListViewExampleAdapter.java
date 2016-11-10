@@ -2,12 +2,12 @@ package johannes.playground;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by johannesklein on 10.11.16.
@@ -65,9 +65,23 @@ public class PgListViewExampleAdapter extends ArrayAdapter<PgListViewExampleItem
         holder.textViewHeader.setText(item.header);
         holder.textViewBody.setText(item.body);
 
+        // Add onClick Listener to holder in order to be reused
+        holder.textViewHeader.setOnClickListener(ExampleListener);
+        holder.textViewHeader.setTag(position);
+
+
         // Return the view
         return row;
     }
+
+    View.OnClickListener ExampleListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int position = (int) view.getTag();
+            PgListViewExampleItem item = mData[position];
+            Toast.makeText(mContext, item.popup, Toast.LENGTH_SHORT).show();
+        }
+    };
 
     private static class PgListViewExampleItemHolder {
         TextView textViewHeader;
