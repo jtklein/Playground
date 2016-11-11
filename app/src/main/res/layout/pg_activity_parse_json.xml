@@ -14,4 +14,20 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
+
+    <Spinner
+        style="@style/PrimarySpinner"
+        android:id="@+id/spinnerParseJSON"
+        android:entries="@array/json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Spinner>
+
+    <Button
+        style="@style/PrimaryButton"
+        android:id="@+id/buttonParse"
+        android:text="@string/ui_parse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
