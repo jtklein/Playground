@@ -26,6 +26,14 @@ public class PgActivityControlFlow extends PgActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (mSpinner.getSelectedItemPosition() == 0){
+
+                    String pangram = mEditText.getText().toString();
+                } else {
+
+                    String pangram = mSpinner.getSelectedItem().toString();
+                }
             }
         });
     }
