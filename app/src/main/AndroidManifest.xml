@@ -68,6 +68,10 @@
             android:name=".PgActivitySharedPreferences"
             android:exported="false"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".PgActivityFiles"
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
