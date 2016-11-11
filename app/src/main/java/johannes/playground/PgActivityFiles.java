@@ -1,5 +1,6 @@
 package johannes.playground;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  * Created by johannesklein on 11.11.16.
@@ -39,6 +41,38 @@ public class PgActivityFiles extends AppCompatActivity{
         });
 
 
+    /**
+     * Save a string to file
+     * @param textToSave the {@String} to save
+     */
+    private void saveTextFile(String textToSave) {
+        // Reference to output stream
+        OutputStream outputStream = null;
+
+        try {
+            // Open file output stream
+            outputStream = openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
+            outputStream.write(textToSave.getBytes());
+
+        } catch (FileNotFoundException e) {
+            Log.e(this.getClass().getSimpleName(), "Error specified file not found");
+            Toast.makeText(this, "Sorry, something went wrong", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+
+        } catch (IOException e) {
+            Log.e(this.getClass().getSimpleName(), "Error IO in opening text file");
+            e.printStackTrace();
+
+        } finally {
+            if (outputStream != null){
+                try {
+                    outputStream.close();
+                } catch (IOException e) {
+                    Log.e(this.getClass().getSimpleName(), "Error IO in closing output stream");
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     /**
