@@ -35,6 +35,8 @@ public class PgActivitySharedPreferences extends AppCompatActivity{
 
         if (timesRun == 0){
             Toast.makeText(this, "Hit it man!", Toast.LENGTH_SHORT).show();
+        } else {
+            mTextView.setText(String.valueOf(timesRun));
         }
 
         mButton.setOnClickListener(new View.OnClickListener() {
