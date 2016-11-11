@@ -13,7 +13,7 @@ import android.widget.Toast;
 /**
  * Created by johannesklein on 11.11.16.
  */
-public class PgActivitySharedPreferences extends AppCompatActivity{
+public class PgActivitySharedPreferences extends PgActivity{
 
     private TextView mTextView = null;
     private Button mButton = null;

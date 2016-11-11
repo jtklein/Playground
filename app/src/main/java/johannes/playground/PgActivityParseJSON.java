@@ -19,7 +19,7 @@ import java.io.InputStream;
 /**
  * Created by johannesklein on 10.11.16.
  */
-public class PgActivityParseJSON extends AppCompatActivity {
+public class PgActivityParseJSON extends PgActivity {
 
     private Spinner mSpinner = null;
     private Button mButton = null;

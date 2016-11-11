@@ -11,7 +11,7 @@ import android.widget.EditText;
 /**
  * Created by johannesklein on 09.11.16.
  */
-public class PgActivitySendIntentExtras extends AppCompatActivity {
+public class PgActivitySendIntentExtras extends PgActivity {
 
     public static final String KEY_FOR_INTENT_INT = "KEY_FOR_INTENT_INT";
 

@@ -8,7 +8,7 @@ import android.widget.TextView;
 /**
  * Created by johannesklein on 09.11.16.
  */
-public class PgActivityReceiveIntentExtras extends AppCompatActivity{
+public class PgActivityReceiveIntentExtras extends PgActivity{
 
     private TextView mTextView = null;
 

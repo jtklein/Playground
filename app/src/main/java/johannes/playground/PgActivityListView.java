@@ -9,7 +9,7 @@ import android.widget.ListView;
 /**
  * Created by johannesklein on 09.11.16.
  */
-public class PgActivityListView extends AppCompatActivity {
+public class PgActivityListView extends PgActivity {
 
     private PgListViewExampleItem[] mData = new PgListViewExampleItem[]{
             new PgListViewExampleItem("Header for item", "Body for item", "Popup for item"),

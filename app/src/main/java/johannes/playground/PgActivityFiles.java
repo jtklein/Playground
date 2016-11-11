@@ -18,7 +18,7 @@ import java.io.OutputStream;
 /**
  * Created by johannesklein on 11.11.16.
  */
-public class PgActivityFiles extends AppCompatActivity{
+public class PgActivityFiles extends PgActivity{
 
     private Button mButtonOpenFile = null;
     private Button mButtonSaveFile = null;

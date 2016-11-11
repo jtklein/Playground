@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class PgActivityIntents extends AppCompatActivity {
+public class PgActivityIntents extends PgActivity {
 
     private Button mButtonImplicitIntents = null;
     private Button mButtonIntentExtras = null;

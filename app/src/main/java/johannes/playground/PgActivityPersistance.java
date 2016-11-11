@@ -10,7 +10,7 @@ import android.widget.Button;
 /**
  * Created by johannesklein on 10.11.16.
  */
-public class PgActivityPersistance extends AppCompatActivity {
+public class PgActivityPersistance extends PgActivity {
 
     private Button mButtonSharedPreferences = null;
     private Button mButtonFiles = null;

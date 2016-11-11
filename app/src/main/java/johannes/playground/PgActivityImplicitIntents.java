@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by johannesklein on 09.11.16.
  */
-public class PgActivityImplicitIntents extends AppCompatActivity {
+public class PgActivityImplicitIntents extends PgActivity {
 
     private Spinner mSpinner = null;
     private Button mButton = null;

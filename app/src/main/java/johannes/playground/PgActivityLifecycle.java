@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class PgActivityLifecycle extends AppCompatActivity {
+public class PgActivityLifecycle extends PgActivity {
 
     private int mOrder = 0;
     private String mStatus = "";

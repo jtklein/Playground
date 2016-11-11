@@ -10,7 +10,7 @@ import android.widget.Button;
 /**
  * Created by johannesklein on 10.11.16.
  */
-public class PgActivityData extends AppCompatActivity{
+public class PgActivityData extends PgActivity{
 
     private Button mButton = null;
 
