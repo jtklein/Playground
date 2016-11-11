@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.FileNotFoundException;
@@ -21,6 +22,7 @@ public class PgActivityFiles extends AppCompatActivity{
 
     private Button mButtonOpenFile = null;
     private Button mButtonSaveFile = null;
+    private EditText mEditText = null;
 
     private static final String FILE_NAME = "example_file_name";
 
@@ -31,15 +33,24 @@ public class PgActivityFiles extends AppCompatActivity{
 
         mButtonOpenFile = (Button) findViewById(R.id.buttonOpenFile);
         mButtonSaveFile = (Button) findViewById(R.id.buttonSaveFile);
+        mEditText = (EditText) findViewById(R.id.editTextTextFile);
 
         mButtonOpenFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openTextFile();
+                mEditText.setText(openTextFile());
 
             }
         });
 
+        mButtonSaveFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveTextFile(mEditText.getText().toString());
+            }
+        });
+    }
 
     /**
      * Save a string to file

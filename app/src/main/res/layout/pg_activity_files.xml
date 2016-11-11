@@ -43,4 +43,14 @@
 
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/editTextTextFile"
+        android:gravity="start"
+        android:text="No file opened ..."
+        android:textColor="@color/colorWhite"
+        android:background="#888888"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
 </LinearLayout>
