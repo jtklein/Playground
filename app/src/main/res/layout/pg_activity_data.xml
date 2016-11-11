@@ -11,6 +11,13 @@
 
     <Button
         style="@style/PrimaryButton"
+        android:id="@+id/buttonControlFlow"
+        android:text="@string/ui_control_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        style="@style/PrimaryButton"
         android:id="@+id/buttonParseJSON"
         android:text="@string/ui_parse_json"
         android:layout_width="match_parent"
