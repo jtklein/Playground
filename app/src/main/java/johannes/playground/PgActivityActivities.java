@@ -7,7 +7,8 @@ import android.widget.Button;
 
 public class PgActivityActivities extends PgActivity {
 
-    private Button mButton = null;
+    private Button mButtonActivityLifecycle = null;
+    private Button mButtonFragmentLifecycle = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,8 +16,8 @@ public class PgActivityActivities extends PgActivity {
         setContentView(R.layout.pg_activity_activities);
 
         // Go to activity lifecycle
-        mButton = (Button) findViewById(R.id.buttonActivityLifecycle);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        mButtonActivityLifecycle = (Button) findViewById(R.id.buttonActivityLifecycle);
+        mButtonActivityLifecycle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Simple intent
@@ -24,5 +25,17 @@ public class PgActivityActivities extends PgActivity {
                 startActivity(intent);
             }
         });
+
+        // Go to fragment lifecycle
+        mButtonFragmentLifecycle = (Button) findViewById(R.id.buttonFragmentLifecycle);
+        mButtonFragmentLifecycle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityFragmentLifecycle.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

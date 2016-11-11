@@ -21,6 +21,7 @@
     <string name="ui_save_file">Save File</string>
     <string name="ui_go_home">Go Home</string>
     <string name="ui_fingerprinting">Fingerprinting</string>
+    <string name="ui_fragment_lifecycle">Fragment Lifecycle</string>
 
     <string-array name="implicit_intents">
         <item>Open website</item>
