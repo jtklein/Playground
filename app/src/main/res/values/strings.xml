@@ -11,12 +11,20 @@
     <string name="ui_activity_lifecycle">Activity Lifecycle</string>
     <string name="ui_views">Views</string>
     <string name="ui_listview">ListView</string>
+    <string name="ui_persistance">Persistance</string>
+    <string name="ui_parse_json">Parse JSON</string>
+    <string name="ui_data">Data</string>
+    <string name="ui_parse">Parse</string>
 
     <string-array name="implicit_intents">
         <item>Open website</item>
         <item>Make call</item>
         <item>Open Map</item>
         <item>Take picture</item>
+    </string-array>
+
+    <string-array name="json">
+        <item>The Object</item>
     </string-array>
 
 </resources>
