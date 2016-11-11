@@ -19,5 +19,19 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <TextView
+        android:id="@+id/textViewSharedPreference"
+        android:textSize="@dimen/text_size_big"
+        android:textColor="@color/colorPrimary"
+        android:padding="@dimen/material_margin_first_tier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/buttonSavePreferences"
+        style="@style/PrimaryButton"
+        android:text="Go"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
