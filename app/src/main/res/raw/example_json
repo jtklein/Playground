@@ -1,0 +1,40 @@
+{
+  "id": "0001",
+  "type": "donut",
+  "name": "Cake",
+  "ppu": 0.55,
+  "stuffinside": {
+    "batter": [
+      {
+        "id": "1001",
+        "type": "Regular"
+      },
+      {
+        "id": "1002",
+        "type": "Chocolate"
+      },
+      {
+        "id": "1003",
+        "type": "Blueberry"
+      },
+      {
+        "id": "1006",
+        "type": "Avacado"
+      },
+      {
+        "id": "1012",
+        "type": "Air"
+      }
+    ],
+    "badstuff": [
+      {
+        "id": "1001",
+        "type": "Spoon"
+      },
+      {
+        "id": "1002",
+        "type": "Fork"
+      }
+    ]
+  }
+}

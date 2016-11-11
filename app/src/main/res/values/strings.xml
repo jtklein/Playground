@@ -24,7 +24,7 @@
     </string-array>
 
     <string-array name="json">
-        <item>The Object</item>
+        <item>Example Object</item>
     </string-array>
 
 </resources>
