@@ -36,5 +36,20 @@ public class PgActivitySharedPreferences extends AppCompatActivity{
         if (timesRun == 0){
             Toast.makeText(this, "Hit it man!", Toast.LENGTH_SHORT).show();
         }
+
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                timesRun++;
+
+                // Write to shared preferences
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt(NUMBER_TIMES_RUN, timesRun);
+                editor.commit();
+
+                mTextView.setText(String.valueOf(timesRun));
+            }
+        });
+
     }
 }
