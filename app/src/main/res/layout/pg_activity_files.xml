@@ -19,5 +19,28 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/buttonOpenFile"
+            style="@style/PrimaryButton"
+            android:text="@string/ui_open_file"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/buttonSaveFile"
+            style="@style/PrimaryButton"
+            android:text="@string/ui_save_file"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 </LinearLayout>
