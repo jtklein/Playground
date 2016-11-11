@@ -13,6 +13,7 @@ import android.widget.Button;
 public class PgActivityPersistance extends AppCompatActivity {
 
     private Button mButtonSharedPreferences = null;
+    private Button mButtonFiles = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,6 +27,17 @@ public class PgActivityPersistance extends AppCompatActivity {
             public void onClick(View view) {
                 // Simple explicit intent
                 Intent intent = new Intent(view.getContext(), PgActivitySharedPreferences.class);
+                startActivity(intent);
+            }
+        });
+
+        // The button to go to files
+        mButtonFiles = (Button) findViewById(R.id.buttonFiles);
+        mButtonFiles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityFiles.class);
                 startActivity(intent);
             }
         });

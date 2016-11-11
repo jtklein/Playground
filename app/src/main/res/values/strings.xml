@@ -16,6 +16,7 @@
     <string name="ui_data">Data</string>
     <string name="ui_parse">Parse</string>
     <string name="ui_shared_preferences">Shared Preferences</string>
+    <string name="ui_files">Files</string>
 
     <string-array name="implicit_intents">
         <item>Open website</item>
