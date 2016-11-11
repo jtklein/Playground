@@ -19,6 +19,44 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="6">
 
+        <EditText
+            android:id="@+id/editTextPangram"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"/>
+
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:text="A pangram is a sensible sentence that contains all letters of the English alphabet. Try if you can find one! Or try one of the examples below!"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <Spinner
+            android:id="@+id/spinnerPangram"
+            style="@style/PrimarySpinner"
+            android:entries="@array/pangrams"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        </Spinner>
+
+        <Button
+            android:id="@+id/buttonTryPangram"
+            style="@style/PrimaryButton"
+            android:text="Try me!"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
 
 </LinearLayout>
