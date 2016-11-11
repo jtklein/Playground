@@ -11,15 +11,17 @@ import android.widget.Button;
  */
 public class PgActivityData extends PgActivity{
 
-    private Button mButton = null;
+    private Button mButtonParseJSON = null;
+    private Button mButtonControlFlow = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_data);
 
-        mButton = (Button) findViewById(R.id.buttonParseJSON);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        // Go to parse JSON activity
+        mButtonParseJSON = (Button) findViewById(R.id.buttonParseJSON);
+        mButtonParseJSON.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Simple explicit intent
@@ -27,6 +29,18 @@ public class PgActivityData extends PgActivity{
                 startActivity(intent);
             }
         });
+
+        // Go to controlflow activity
+        mButtonControlFlow = (Button) findViewById(R.id.buttonControlFlow);
+        mButtonControlFlow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityControlFlow.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
