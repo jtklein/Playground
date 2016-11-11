@@ -4,7 +4,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,6 +22,9 @@ import java.io.InputStream;
 public class PgActivityParseJSON extends AppCompatActivity {
 
     private Spinner mSpinner = null;
+    private Button mButton = null;
+
+    private String mData[] = {};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,8 +33,35 @@ public class PgActivityParseJSON extends AppCompatActivity {
 
         // Get the spinner
         mSpinner = (Spinner) findViewById(R.id.spinnerParseJSON);
+        mButton = (Button) findViewById(R.id.buttonParse);
 
         String exampleJSON = getJSONFile();
+
+        try {
+            JSONObject rootJSON = new JSONObject(exampleJSON);
+            JSONObject secondJSON = rootJSON.getJSONObject("stuffinside");
+            JSONArray batterJSON = secondJSON.getJSONArray("batter");
+
+            mData = new String[batterJSON.length()];
+
+            for (int i = 0; i < batterJSON.length(); i++){
+
+                mData[i] = batterJSON.getJSONObject(i).getString("type");
+            }
+
+        } catch (JSONException e) {
+            Log.e(this.getClass().getSimpleName(), "Error while JSON Parsing");
+            e.printStackTrace();
+
+        }
+
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_spinner_dropdown_item, mData);
+                mSpinner.setAdapter(adapter);
+            }
+        });
     }
 
     public String getJSONFile(){
