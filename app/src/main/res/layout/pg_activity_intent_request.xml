@@ -19,4 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <Button
+        android:id="@+id/buttonRequest"
+        style="@style/PrimaryButton"
+        android:text="Select something"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
