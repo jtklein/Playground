@@ -26,6 +26,10 @@ public class PgActivityIntentRequestSelection extends PgActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), PgActivityIntentRequest.class);
+                intent.putExtra(PgActivityIntentRequest.REQUEST_RETURN_KEY, mSpinner.getSelectedItem().toString());
+                setResult(RESULT_OK, intent);
+                finish();
             }
         });
     }
