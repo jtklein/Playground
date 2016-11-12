@@ -12,6 +12,7 @@ import android.widget.Button;
 public class PgActivityUser extends PgActivity {
 
     private Button mButtonToast = null;
+    private Button mButtonNotification = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,5 +29,14 @@ public class PgActivityUser extends PgActivity {
             }
         });
 
+        mButtonNotification = (Button) findViewById(R.id.buttonNotification);
+        mButtonNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityNotification.class);
+                startActivity(intent);
+            }
+        });
     }
 }
