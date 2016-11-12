@@ -30,12 +30,28 @@ public class PgActivityControlFlow extends PgActivity {
                 if (mSpinner.getSelectedItemPosition() == 0){
 
                     String pangram = mEditText.getText().toString();
+                    char[] sentenceToTest = toCharacterArray(pangram);
                 } else {
 
                     String pangram = mSpinner.getSelectedItem().toString();
+                    char[] sentenceToTest = toCharacterArray(pangram);
                 }
             }
         });
     }
+
+    private char[] toCharacterArray(String pangram) {
+
+        if (pangram == null){
+            return null;
+
+        }
+        char[] charArray = new char[pangram.length()];
+        for (int i = 0; i < pangram.length(); i++){
+            charArray[i] = Character.toLowerCase(pangram.charAt(i));
+        }
+        return charArray;
+    }
+
     }
 }
