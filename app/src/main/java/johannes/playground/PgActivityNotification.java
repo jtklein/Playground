@@ -32,9 +32,21 @@ public class PgActivityNotification extends PgActivity {
 
                 String message = mEditText.getText().toString();
 
+                sendNotification(message);
+
             }
         });
 
     }
 
+    private void sendNotification(String message) {
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        builder.setSmallIcon(R.drawable.ic_fingerprint_black_24dp);
+        builder.setContentTitle("Your message:");
+        builder.setContentText(message);
+
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(1234, builder.build());
+    }
 }
