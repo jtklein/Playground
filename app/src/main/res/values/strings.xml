@@ -27,6 +27,7 @@
     <string name="ui_user">User</string>
     <string name="ui_toast">Toast</string>
     <string name="ui_notification">Notification</string>
+    <string name="ui_intent_request">Intent Request</string>
 
     <string-array name="implicit_intents">
         <item>Open website</item>

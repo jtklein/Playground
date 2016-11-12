@@ -92,6 +92,10 @@
             android:name=".PgActivityNotification"
             android:exported="false"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".PgActivityIntentRequest"
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
