@@ -18,11 +18,11 @@ public class PgActivityUser extends PgActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_user);
 
-        mButtonToast = (Button) findViewById(R.id.buttonUser);
+        mButtonToast = (Button) findViewById(R.id.buttonToast);
         mButtonToast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // SImple explicit intent
+                // Simple explicit intent
                 Intent intent = new Intent(view.getContext(), PgActivityToast.class);
                 startActivity(intent);
             }
