@@ -84,6 +84,10 @@
             android:name=".PgActivityUser"
             android:exported="false"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".PgActivityToast"
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
