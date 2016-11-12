@@ -22,7 +22,7 @@ public class PgActivityNotification extends PgActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_notification);
 
-        mButton = (Button) findViewById(R.id.buttonNotification);
+        mButton = (Button) findViewById(R.id.buttonShowNotification);
 
         mEditText = (EditText) findViewById(R.id.editTextPush);
 
