@@ -100,6 +100,12 @@
             android:name=".PgActivityIntentRequestSelection"
             android:exported="false"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".PgActivityIntentReceiver"
+            android:screenOrientation="portrait">
+        </activity>
+
     </application>
 
 </manifest>
