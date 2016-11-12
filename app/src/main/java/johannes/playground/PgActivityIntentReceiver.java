@@ -19,5 +19,22 @@ public class PgActivityIntentReceiver extends PgActivity {
         setContentView(R.layout.pg_activity_intent_receiver);
 
         mTextView = (TextView) findViewById(R.id.textViewInterception);
+
+        /*
+            The receiver set up in manifest
+         */
+
+        // Receive http intent
+        Intent httpIntent = getIntent();
+        String action = httpIntent.getAction();
+
+        // Check if intent is of action view
+        if (action != null && action.equals(Intent.ACTION_VIEW)){
+            Uri data = httpIntent.getData();
+            if (data != null){
+                // UX react to intent
+                mTextView.setText("Interception!");
+            }
+        }
     }
 }
