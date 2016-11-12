@@ -19,6 +19,13 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <TextView
+        android:id="@+id/textViewRequestSelection"
+        style="@style/HeaderTextView"
+        android:text="Nothing selected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/buttonRequest"
         style="@style/PrimaryButton"
