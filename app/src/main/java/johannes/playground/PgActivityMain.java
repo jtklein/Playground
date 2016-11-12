@@ -12,6 +12,7 @@ public class PgActivityMain extends PgActivity {
     private Button mButtonViews = null;
     private Button mButtonPersistance = null;
     private Button mButtonData = null;
+    private Button mButtonUser = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,17 @@ public class PgActivityMain extends PgActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), PgActivityData.class);
+                startActivity(intent);
+            }
+        });
+
+        // The button to go to user playground
+        mButtonUser = (Button) findViewById(R.id.buttonUser);
+        mButtonUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityUser.class);
                 startActivity(intent);
             }
         });

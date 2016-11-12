@@ -24,6 +24,7 @@
     <string name="ui_fragment_lifecycle">Fragment Lifecycle</string>
     <string name="ui_example_fragment">Example Fragment</string>
     <string name="ui_control_flow">Controlflow</string>
+    <string name="ui_user">User</string>
 
     <string-array name="implicit_intents">
         <item>Open website</item>
