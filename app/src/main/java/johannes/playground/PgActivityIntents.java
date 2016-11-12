@@ -9,6 +9,7 @@ public class PgActivityIntents extends PgActivity {
 
     private Button mButtonImplicitIntents = null;
     private Button mButtonIntentExtras = null;
+    private Button mButtonIntentRequest = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,16 @@ public class PgActivityIntents extends PgActivity {
             }
         });
 
-
+        // Button to go to intent request
+        mButtonIntentRequest = (Button) findViewById(R.id.buttonIntentRequest);
+        mButtonIntentRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityIntentRequest.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

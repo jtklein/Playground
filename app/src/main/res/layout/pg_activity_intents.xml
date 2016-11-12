@@ -24,4 +24,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Button
+        style="@style/PrimaryButton"
+        android:id="@+id/buttonIntentRequest"
+        android:text="@string/ui_intent_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
