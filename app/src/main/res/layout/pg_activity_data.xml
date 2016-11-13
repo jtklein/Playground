@@ -23,4 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/buttonNetworking"
+        style="@style/PrimaryButton"
+        android:text="@string/ui_networking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

@@ -13,6 +13,7 @@ public class PgActivityData extends PgActivity{
 
     private Button mButtonParseJSON = null;
     private Button mButtonControlFlow = null;
+    private Button mButtonNetworking = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +42,16 @@ public class PgActivityData extends PgActivity{
             }
         });
 
+        // Go to networking activity
+        mButtonNetworking = (Button) findViewById(R.id.buttonNetworking);
+        mButtonNetworking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityNetworking.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
