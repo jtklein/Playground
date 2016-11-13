@@ -1,5 +1,7 @@
 package johannes.playground;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -38,5 +40,30 @@ public class PgActivityDialog extends PgActivity {
 
     private Dialog buildDialog(String message) {
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        if (message.length() == 0){
+
+            builder.setMessage("Please enter some text, it's fun, I promise!");
+        } else {
+            builder.setMessage(message);
+        }
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                // Positive reaction here
+            }
+        });
+
+        builder.setNegativeButton("Abort!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                // Negative reaction here
+            }
+        });
+
+        return builder.create();
     }
 }
