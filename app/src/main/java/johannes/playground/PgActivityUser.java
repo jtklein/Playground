@@ -14,6 +14,7 @@ public class PgActivityUser extends PgActivity {
     private Button mButtonToast = null;
     private Button mButtonNotification = null;
     private Button mButtonDialog = null;
+    private Button mButtonPicker = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,6 +50,17 @@ public class PgActivityUser extends PgActivity {
             public void onClick(View view) {
                 // Simple explicit intent
                 Intent intent = new Intent(view.getContext(), PgActivityDialog.class);
+                startActivity(intent);
+            }
+        });
+
+        // The button to go to picker activity
+        mButtonPicker = (Button) findViewById(R.id.buttonPicker);
+        mButtonPicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityPicker.class);
                 startActivity(intent);
             }
         });

@@ -30,6 +30,7 @@
     <string name="ui_intent_request">Intent Request</string>
     <string name="ui_intent_receiver">Intent Receiver</string>
     <string name="ui_dialog">Dialog</string>
+    <string name="ui_picker">Picker</string>
 
     <string-array name="implicit_intents">
         <item>Open website</item>
