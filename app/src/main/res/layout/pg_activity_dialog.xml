@@ -19,6 +19,26 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="5">
 
+        <EditText
+            android:id="@+id/editTextDialogMessage"
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/buttonBuildDialog"
+            style="@style/PrimaryButton"
+            android:text="Try me"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
 
 </LinearLayout>
