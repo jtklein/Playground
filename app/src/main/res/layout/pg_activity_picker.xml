@@ -19,4 +19,43 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="6">
+
+        <Button
+            android:id="@+id/buttonTimePicker"
+            android:text="Show Time Picker"
+            style="@style/PrimaryButton"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:id="@+id/textViewTimePicked"
+            style="@style/HeaderTextView"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/buttonDatePicker"
+            android:text="Show Date Picker"
+            style="@style/PrimaryButton"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:id="@+id/textViewDatePicked"
+            style="@style/HeaderTextView"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by johannesklein on 13.11.16.
@@ -35,35 +36,41 @@ public class PgActivityDialog extends PgActivity {
                 buildDialog(message).show();
             }
         });
-
     }
 
     private Dialog buildDialog(String message) {
 
+        // Create new Builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
+        // Show special message if no text input is given
         if (message.length() == 0){
 
             builder.setMessage("Please enter some text, it's fun, I promise!");
         } else {
             builder.setMessage(message);
         }
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+        // Add positive button that displays a Toast
+        builder.setPositiveButton("Toast it!", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
                 // Positive reaction here
+                Toast.makeText(getApplicationContext(), "Grilling!", Toast.LENGTH_SHORT).show();
             }
         });
 
+        // Add negative Button to dialog
         builder.setNegativeButton("Abort!", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                // Negative reaction here
+                // Negative reaction here, nothing to implement, closes the dialog
             }
         });
 
+        // Return the Dialog
         return builder.create();
     }
 }
