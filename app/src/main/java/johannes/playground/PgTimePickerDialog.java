@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
@@ -18,17 +19,21 @@ public class PgTimePickerDialog extends DialogFragment implements TimePickerDial
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Create a calendar object, get current time as starting point for picker
         Calendar currentTime = Calendar.getInstance();
-        int hour = currentTime.HOUR;
-        int minute = currentTime.MINUTE;
+        int hour = currentTime.get(Calendar.HOUR);
+        int minute = currentTime.get(Calendar.MINUTE);
 
         // Create a new TimePickerDialog and return
-        return new TimePickerDialog(getActivity(), this, hour, minute, true);
+        Dialog dialog = new TimePickerDialog(getActivity(), this, hour, minute, true);
+        return dialog;
 
     }
 
     @Override
-    public void onTimeSet(TimePicker timePicker, int i, int i1) {
+    public void onTimeSet(TimePicker timePicker, int hour, int minute) {
+        // Display selected time in the activity
+        TextView textViewTimePicked = (TextView) getActivity().findViewById(R.id.textViewTimePicked);
+        String selectedTime = hour + ":" + minute;
+        textViewTimePicked.setText(selectedTime);
 
-        // Do something with the time selected
     }
 }
