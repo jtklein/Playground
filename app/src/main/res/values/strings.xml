@@ -32,6 +32,7 @@
     <string name="ui_dialog">Dialog</string>
     <string name="ui_picker">Picker</string>
     <string name="ui_networking">Networking</string>
+    <string name="ui_fab">Floating Action Button</string>
 
     <string-array name="implicit_intents">
         <item>Open website</item>

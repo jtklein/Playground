@@ -11,19 +11,32 @@ import android.widget.Button;
  */
 public class PgActivityViews extends PgActivity {
 
-    private Button mButton = null;
+    private Button mButtonListView = null;
+    private Button mButtonFloatingActionButton = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_views);
 
-        mButton = (Button) findViewById(R.id.buttonListView);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        // Button to go to ListViewActivity
+        mButtonListView = (Button) findViewById(R.id.buttonListView);
+        mButtonListView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Simple Explicit Intent
                 Intent intent = new Intent(view.getContext(), PgActivityListView.class);
+                startActivity(intent);
+            }
+        });
+
+        // Button to go to floating action button activity
+        mButtonFloatingActionButton = (Button) findViewById(R.id.buttonFAB);
+        mButtonFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityFloatingActionButton.class);
                 startActivity(intent);
             }
         });
