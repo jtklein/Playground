@@ -176,6 +176,13 @@ public class PgActivityMultithreading extends PgActivity {
                 }
             }
 
+            // Set progress bar layout invisible
+            this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mLinearLayoutLoading.setVisibility(View.GONE);
+                }
+            });
         }
 
         return success;
@@ -197,6 +204,13 @@ public class PgActivityMultithreading extends PgActivity {
         @Override
         public void run() {
 
+            // Set progress bar in layout to visible
+            PgActivityMultithreading.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mLinearLayoutLoading.setVisibility(View.VISIBLE);
+                }
+            });
 
             // Download image
             downloadImageUsingThreads(url);
