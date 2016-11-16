@@ -20,12 +20,9 @@
         android:layout_height="@dimen/text_size_big" />
 
     <ProgressBar
-        style="@android:style/Widget.ProgressBar.Horizontal"
+        style="@style/PrimaryHorizontalProgressBar"
         android:id="@+id/progressBarHandlers"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="0" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

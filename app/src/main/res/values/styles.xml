@@ -50,4 +50,13 @@
         <item name="android:padding">@dimen/material_margin_first_tier</item>
     </style>
 
+    <!-- Custom hprizontal progress bar style -->
+    <style name="PrimaryHorizontalProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminate">false</item>
+        <item name="android:max">100</item>
+        <item name="android:progress">0</item>
+        <item name="android:progressTint">@color/colorPrimary</item>
+        <item name="android:padding">@dimen/material_margin_first_tier</item>
+    </style>
+
 </resources>
