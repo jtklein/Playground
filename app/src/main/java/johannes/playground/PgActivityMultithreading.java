@@ -1,6 +1,7 @@
 package johannes.playground;
 
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
@@ -83,134 +84,118 @@ public class PgActivityMultithreading extends PgActivity {
                 int position = mSpinner.getSelectedItemPosition();
 
                 // Open a new thread
-                Thread thread = new Thread(new DownloadImagesThread(mLoadingUrls[position]));
-
-                // Start thread
-                thread.start();
+                MyAsyncTask myAsyncTask = new MyAsyncTask();
+                myAsyncTask.execute(mLoadingUrls[position]);
 
             }
         });
     }
 
-    public boolean downloadImageUsingThreads(String url){
+    private class MyAsyncTask extends AsyncTask <String, Integer, Boolean> {
 
-        boolean success = false;
 
-        HttpURLConnection urlConnection = null;
-        InputStream inputStream = null;
-        FileOutputStream fileOutputStream = null;
-        File file = null;
-
-        try {
-            // Create new URL object that represents the url
-            URL downloadUrl = new URL(url);
-
-            // Open connection to url
-            urlConnection = (HttpURLConnection) downloadUrl.openConnection();
-            int statusCode = urlConnection.getResponseCode();
-            if (statusCode != HttpURLConnection.HTTP_OK) {
-                success = false;
-            }
-
-            inputStream = urlConnection.getInputStream();
-
-            if (inputStream != null) {
-                // Get folder name on sdcard
-                String folder = getExternalFilesDir(null).getAbsolutePath();
-
-                // Create file name from folder and url last path segment
-                Uri uri = Uri.parse(url);
-                String fileName = uri.getLastPathSegment();
-                file = new File(folder + "/" + fileName);
-
-                // Create file output stream
-                fileOutputStream = new FileOutputStream(file);
-
-                // Read image from url with determinate buffer
-                int read = -1;
-                byte[] buffer = new byte[1024];
-                while ((read = inputStream.read(buffer)) != -1){
-                    // Write file while reading
-                    fileOutputStream.write(buffer, 0, read);
-                }
-
-                success = true;
-
-            }
-        } catch (MalformedURLException e) {
-            Log.e(this.getClass().getSimpleName(), "Error downloading image from " + url);
-            e.printStackTrace();
-
-        } catch (IOException e) {
-            Log.e(this.getClass().getSimpleName(), "Error IO in url connection to: " + url);
-            e.printStackTrace();
-
-        } finally {
-            // Close url connection
-            if (urlConnection != null) {
-                urlConnection.disconnect();
-            }
-
-            // Close input stream
-            if (inputStream != null){
-                try {
-                    inputStream.close();
-
-                } catch (IOException e) {
-                    Log.e(this.getClass().getSimpleName(), "Error closing input stream");
-                    e.printStackTrace();
-                }
-            }
-
-            // Close output stream
-            if (fileOutputStream != null){
-                try {
-                    fileOutputStream.close();
-
-                } catch (IOException e) {
-                    Log.e(this.getClass().getSimpleName(), "Error IO closing output stream");
-                    e.printStackTrace();
-                }
-            }
-
-            // Set progress bar layout invisible
-            this.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mLinearLayoutLoading.setVisibility(View.GONE);
-                }
-            });
+        @Override
+        protected void onPreExecute() {
+            // Make progress layout visible
+            mLinearLayoutLoading.setVisibility(View.VISIBLE);
         }
 
-        return success;
-    }
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            boolean success = false;
+            String url = strings[0];
 
-    /**
-     * Opens a new background thread that downloads an image from url
-     */
-    private class DownloadImagesThread implements Runnable {
+            HttpURLConnection urlConnection = null;
+            InputStream inputStream = null;
+            FileOutputStream fileOutputStream = null;
+            File file = null;
 
-        private String url = null;
+            try {
+                // Create new URL object that represents the url
+                URL downloadUrl = new URL(url);
 
-        public DownloadImagesThread(String url) {
-            // Save param
-            this.url = url;
+                // Open connection to url
+                urlConnection = (HttpURLConnection) downloadUrl.openConnection();
+                int statusCode = urlConnection.getResponseCode();
+                if (statusCode != HttpURLConnection.HTTP_OK) {
+                    Log.e(this.getClass().getSimpleName(), "HTTP connection unsuccesfull");
+                }
+
+                inputStream = urlConnection.getInputStream();
+
+                if (inputStream != null) {
+                    // Get folder name on sdcard
+                    String folder = getExternalFilesDir(null).getAbsolutePath();
+
+                    // Create file name from folder and url last path segment
+                    Uri uri = Uri.parse(url);
+                    String fileName = uri.getLastPathSegment();
+                    file = new File(folder + "/" + fileName);
+
+                    // Create file output stream
+                    fileOutputStream = new FileOutputStream(file);
+
+                    // Read image from url with determinate buffer
+                    int read = -1;
+                    byte[] buffer = new byte[1024];
+                    while ((read = inputStream.read(buffer)) != -1){
+                        // Write file while reading
+                        fileOutputStream.write(buffer, 0, read);
+
+
+
+                    success = true;
+
+                }
+            } catch (MalformedURLException e) {
+                Log.e(this.getClass().getSimpleName(), "Error downloading image from " + url);
+                e.printStackTrace();
+
+            } catch (IOException e) {
+                Log.e(this.getClass().getSimpleName(), "Error IO in url connection to: " + url);
+                e.printStackTrace();
+
+            } finally {
+                // Close url connection
+                if (urlConnection != null) {
+                    urlConnection.disconnect();
+                }
+
+                // Close input stream
+                if (inputStream != null){
+                    try {
+                        inputStream.close();
+
+                    } catch (IOException e) {
+                        Log.e(this.getClass().getSimpleName(), "Error closing input stream");
+                        e.printStackTrace();
+                    }
+                }
+
+                // Close output stream
+                if (fileOutputStream != null){
+                    try {
+                        fileOutputStream.close();
+
+                    } catch (IOException e) {
+                        Log.e(this.getClass().getSimpleName(), "Error IO closing output stream");
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            return success;
+        }
+
+
 
         }
 
         @Override
-        public void run() {
+        protected void onPostExecute(Boolean aBoolean) {
+            // Make progress layout invisible
+            mLinearLayoutLoading.setVisibility(View.GONE);
 
-            // Set progress bar in layout to visible
-            PgActivityMultithreading.this.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mLinearLayoutLoading.setVisibility(View.VISIBLE);
-                }
-            });
-
-            // Download image
-            downloadImageUsingThreads(url);
         }
     }
 }
