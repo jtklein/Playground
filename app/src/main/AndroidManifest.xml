@@ -128,6 +128,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".PgActivityFloatingActionButton"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".PgActivityMultithreading"
             android:exported="false"
             android:screenOrientation="portrait" />
