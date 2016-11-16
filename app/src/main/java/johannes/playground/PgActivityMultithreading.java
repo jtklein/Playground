@@ -116,6 +116,30 @@ public class PgActivityMultithreading extends PgActivity {
             }
 
             inputStream = urlConnection.getInputStream();
+
+            if (inputStream != null) {
+                // Get folder name on sdcard
+                String folder = getExternalFilesDir(null).getAbsolutePath();
+
+                // Create file name from folder and url last path segment
+                Uri uri = Uri.parse(url);
+                String fileName = uri.getLastPathSegment();
+                file = new File(folder + "/" + fileName);
+
+                // Create file output stream
+                fileOutputStream = new FileOutputStream(file);
+
+                // Read image from url with determinate buffer
+                int read = -1;
+                byte[] buffer = new byte[1024];
+                while ((read = inputStream.read(buffer)) != -1){
+                    // Write file while reading
+                    fileOutputStream.write(buffer, 0, read);
+                }
+
+                success = true;
+
+            }
         } catch (MalformedURLException e) {
             Log.e(this.getClass().getSimpleName(), "Error downloading image from " + url);
             e.printStackTrace();
