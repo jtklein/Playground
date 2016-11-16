@@ -45,14 +45,6 @@ public class PgActivityMultithreading extends PgActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_multithreading);
 
-        /*
-                Multithreading the hard way.
-                Opening a new thread on click of the button.
-                Interacting with the UI thread from background.
-
-                Problem: Activity reference can be destroyed during background work
-         */
-
         // Get the layout elements
         mButton = (Button) findViewById(R.id.buttonImageDownload);
         mProgressBar = (ProgressBar) findViewById(R.id.loadingProgress);
@@ -143,14 +135,14 @@ public class PgActivityMultithreading extends PgActivity {
                     // Read image from url with determinate buffer
                     int read = -1;
                     byte[] buffer = new byte[1024];
-                    while ((read = inputStream.read(buffer)) != -1){
+                    while ((read = inputStream.read(buffer)) != -1) {
                         // Write file while reading
                         fileOutputStream.write(buffer, 0, read);
 
                         // Publish download progress
                         counter = counter + read;
                         publishProgress(counter);
-
+                    }
 
                     success = true;
 
