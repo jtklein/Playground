@@ -65,7 +65,21 @@ public class PgActivityMultithreading extends PgActivity {
             mListView.setAdapter(mAdapter);
         }
 
+        // Download selected image on background thread
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                int position = mSpinner.getSelectedItemPosition();
+
+                // Open a new thread
+                Thread thread = new Thread(new DownloadImagesThread(mLoadingUrls[position]));
+
+                // Start thread
+                thread.start();
+
+            }
+        });
 
     }
 }
