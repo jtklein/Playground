@@ -80,7 +80,19 @@ public class PgActivityMultithreading extends PgActivity {
 
             }
         });
+    }
 
+    public boolean downloadImageUsingThreads(String url){
+
+        boolean success = false;
+
+        HttpURLConnection urlConnection = null;
+        InputStream inputStream = null;
+        FileOutputStream fileOutputStream = null;
+        File file = null;
+        }
+
+        return success;
     }
 
     /**
