@@ -15,6 +15,7 @@ public class PgActivityData extends PgActivity{
     private Button mButtonControlFlow = null;
     private Button mButtonNetworking = null;
     private Button mButtonMultithreading = null;
+    private Button mButtonMultithreadingHandlers = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,6 +62,17 @@ public class PgActivityData extends PgActivity{
             public void onClick(View view) {
                 // Simple explicit intent
                 Intent intent = new Intent(view.getContext(), PgActivityMultithreading.class);
+                startActivity(intent);
+            }
+        });
+
+        // Go to multithreading with handlers activity
+        mButtonMultithreadingHandlers = (Button) findViewById(R.id.buttonMultithreadingHandlers);
+        mButtonMultithreadingHandlers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityMultithreadingHandlers.class);
                 startActivity(intent);
             }
         });

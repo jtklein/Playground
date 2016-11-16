@@ -37,4 +37,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/buttonMultithreadingHandlers"
+        style="@style/PrimaryButton"
+        android:text="@string/ui_multithreading_handlers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
