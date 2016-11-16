@@ -82,4 +82,26 @@ public class PgActivityMultithreading extends PgActivity {
         });
 
     }
+
+    /**
+     * Opens a new background thread that downloads an image from url
+     */
+    private class DownloadImagesThread implements Runnable {
+
+        private String url = null;
+
+        public DownloadImagesThread(String url) {
+            // Save param
+            this.url = url;
+
+        }
+
+        @Override
+        public void run() {
+
+
+            // Download image
+            downloadImageUsingThreads(url);
+        }
+    }
 }
