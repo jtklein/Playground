@@ -93,6 +93,9 @@ public class PgActivityMultithreading extends PgActivity {
 
     private class MyAsyncTask extends AsyncTask <String, Integer, Boolean> {
 
+        private int contentLength = -1;
+        private int counter = 0;
+        private int calculatedProgress = 0;
 
         @Override
         protected void onPreExecute() {
@@ -116,6 +119,8 @@ public class PgActivityMultithreading extends PgActivity {
 
                 // Open connection to url
                 urlConnection = (HttpURLConnection) downloadUrl.openConnection();
+                contentLength = urlConnection.getContentLength();
+
                 int statusCode = urlConnection.getResponseCode();
                 if (statusCode != HttpURLConnection.HTTP_OK) {
                     Log.e(this.getClass().getSimpleName(), "HTTP connection unsuccesfull");
@@ -142,6 +147,9 @@ public class PgActivityMultithreading extends PgActivity {
                         // Write file while reading
                         fileOutputStream.write(buffer, 0, read);
 
+                        // Publish download progress
+                        counter = counter + read;
+                        publishProgress(counter);
 
 
                     success = true;
@@ -187,7 +195,14 @@ public class PgActivityMultithreading extends PgActivity {
             return success;
         }
 
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            // Get progress
+            double progress = values[0].doubleValue();
+            calculatedProgress = (int) (progress/contentLength * 100);
 
+            // Update progress bar
+            mProgressBar.setProgress(calculatedProgress);
 
         }
 
