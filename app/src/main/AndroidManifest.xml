@@ -3,7 +3,12 @@
     package="johannes.playground">
 
     <!-- Normal permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <!-- Dangerous permissions -->
+    <!-- TODO request permission at runtime -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <!-- Used features -->
     <application
         android:allowBackup="true"
