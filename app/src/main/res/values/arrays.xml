@@ -26,4 +26,9 @@
         <item>Image 2</item>
     </string-array>
 
+    <string-array name="loading_urls">
+        <item>https://upload.wikimedia.org/wikipedia/commons/3/39/Sempervivum_ciliosum_var_borisii_4.JPG</item>
+        <item>https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sedum_anglicum.jpg/1024px-Sedum_anglicum.jpg</item>
+    </string-array>
+
 </resources>
