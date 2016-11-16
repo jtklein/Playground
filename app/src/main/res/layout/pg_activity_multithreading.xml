@@ -19,13 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
-    <EditText
-        style="@style/PrimaryEditText"
-        android:id="@+id/editTextImageDownload"
-        android:focusable="false"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <Button
         style="@style/PrimaryButton"
         android:id="@+id/buttonImageDownload"
@@ -48,8 +41,11 @@
             android:layout_height="wrap_content" />
 
         <ProgressBar
+            style="@android:style/Widget.ProgressBar.Horizontal"
             android:id="@+id/loadingProgress"
-            android:indeterminate="true"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

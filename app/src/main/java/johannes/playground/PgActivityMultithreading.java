@@ -26,7 +26,6 @@ import java.net.URL;
  */
 public class PgActivityMultithreading extends PgActivity {
 
-    private EditText mEditText = null;
     private Button mButton = null;
     private ProgressBar mProgressBar = null;
     private Spinner mSpinner = null;
@@ -39,7 +38,6 @@ public class PgActivityMultithreading extends PgActivity {
     private String[] mLoadingUrls;
 
     private PgListViewExampleItem[] mData = new PgListViewExampleItem[2];
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,7 +53,6 @@ public class PgActivityMultithreading extends PgActivity {
          */
 
         // Get the layout elements
-        mEditText = (EditText) findViewById(R.id.editTextImageDownload);
         mButton = (Button) findViewById(R.id.buttonImageDownload);
         mProgressBar = (ProgressBar) findViewById(R.id.loadingProgress);
         mSpinner = (Spinner) findViewById(R.id.spinnerLoadingText);
