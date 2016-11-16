@@ -37,7 +37,8 @@
         android:id="@+id/loadingSection"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/loadingMessage"
@@ -53,6 +54,15 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
+    <Spinner
+        style="@style/PrimarySpinner"
+        android:id="@+id/spinnerLoadingText"
+        android:entries="@array/loading_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Spinner>
 
     <ListView
         android:id="@+id/loadingUrls"
