@@ -148,6 +148,34 @@ public class PgActivityMultithreading extends PgActivity {
             Log.e(this.getClass().getSimpleName(), "Error IO in url connection to: " + url);
             e.printStackTrace();
 
+        } finally {
+            // Close url connection
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+
+            // Close input stream
+            if (inputStream != null){
+                try {
+                    inputStream.close();
+
+                } catch (IOException e) {
+                    Log.e(this.getClass().getSimpleName(), "Error closing input stream");
+                    e.printStackTrace();
+                }
+            }
+
+            // Close output stream
+            if (fileOutputStream != null){
+                try {
+                    fileOutputStream.close();
+
+                } catch (IOException e) {
+                    Log.e(this.getClass().getSimpleName(), "Error IO closing output stream");
+                    e.printStackTrace();
+                }
+            }
+
         }
 
         return success;
