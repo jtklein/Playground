@@ -19,7 +19,12 @@ public class PgActivityMultithreading extends PgActivity {
     private ListView mListView = null;
     private LinearLayout mLinearLayoutLoading = null;
 
+    private PgListViewExampleAdapter mAdapter;
+
+    private String[] mLoadingText;
     private String[] mLoadingUrls;
+
+    private PgListViewExampleItem[] mData = new PgListViewExampleItem[2];
 
 
     @Override
@@ -32,6 +37,20 @@ public class PgActivityMultithreading extends PgActivity {
         mProgressBar = (ProgressBar) findViewById(R.id.loadingProgress);
         mListView = (ListView) findViewById(R.id.loadingUrls);
         mLinearLayoutLoading = (LinearLayout) findViewById(R.id.loadingSection);
+
+        mLoadingText = getResources().getStringArray(R.array.loading_text);
+        mLoadingUrls = getResources().getStringArray(R.array.loading_urls);
+
+        for (int i = 0; i < mData.length; i++){
+            mData[i] = new PgListViewExampleItem(mLoadingText[i], mLoadingUrls[i], "No Popup");
+
+        }
+
+        mAdapter = new PgListViewExampleAdapter(this, R.layout.pg_listview_item, mData);
+
+        if (mAdapter != null){
+            mListView.setAdapter(mAdapter);
+        }
 
 
 
