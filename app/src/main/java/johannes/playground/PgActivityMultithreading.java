@@ -1,12 +1,25 @@
 package johannes.playground;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Created by johannesklein on 16.11.16.
@@ -90,6 +103,27 @@ public class PgActivityMultithreading extends PgActivity {
         InputStream inputStream = null;
         FileOutputStream fileOutputStream = null;
         File file = null;
+
+        try {
+            // Create new URL object that represents the url
+            URL downloadUrl = new URL(url);
+
+            // Open connection to url
+            urlConnection = (HttpURLConnection) downloadUrl.openConnection();
+            int statusCode = urlConnection.getResponseCode();
+            if (statusCode != HttpURLConnection.HTTP_OK) {
+                success = false;
+            }
+
+            inputStream = urlConnection.getInputStream();
+        } catch (MalformedURLException e) {
+            Log.e(this.getClass().getSimpleName(), "Error downloading image from " + url);
+            e.printStackTrace();
+
+        } catch (IOException e) {
+            Log.e(this.getClass().getSimpleName(), "Error IO in url connection to: " + url);
+            e.printStackTrace();
+
         }
 
         return success;
