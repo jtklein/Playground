@@ -57,7 +57,7 @@ public class PgActivityRetainedFragment extends PgActivity implements PgFragment
         mButtonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                // Start background task if fragment is attached
                 if (mFragment != null)
                     mFragment.startBackgroundTask();
             }
@@ -66,7 +66,7 @@ public class PgActivityRetainedFragment extends PgActivity implements PgFragment
         mButtonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                // Cancel background task if fragment is attached
                 if (mFragment != null)
                     mFragment.cancelBackgroundTask();
             }
@@ -75,6 +75,13 @@ public class PgActivityRetainedFragment extends PgActivity implements PgFragment
         mButtonRecreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /**
+                 * Cause this Activity to be recreated with a new instance. This
+                 * results in essentially the same flow as when the Activity is
+                 * created due to a configuration change the current instance will
+                 * go through its lifecycle to onDestroy and a new instance then
+                 * created after it.
+                 */
                 recreate();
             }
         });
@@ -88,6 +95,8 @@ public class PgActivityRetainedFragment extends PgActivity implements PgFragment
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+
+        // Store progress bar state in savedInstanceState
         outState.putInt("progress_value", mProgressBar.getProgress());
     }
 
@@ -95,12 +104,14 @@ public class PgActivityRetainedFragment extends PgActivity implements PgFragment
 
     @Override
     public void onPreExecute() {
+        // Callback that background task is in onPreExecute
         Toast.makeText(getApplicationContext(), "onPreExecute",
                 Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onPostExecute() {
+        // Callback that background task ist in onPostExecute, show Toast, update executing status
         Toast.makeText(getApplicationContext(), "onPostExecute",
                 Toast.LENGTH_SHORT).show();
         if (mFragment != null)
@@ -109,6 +120,7 @@ public class PgActivityRetainedFragment extends PgActivity implements PgFragment
 
     @Override
     public void onCancelled() {
+        // Callback that background task is canceled, show Toast
         Toast.makeText(getApplicationContext(), "onCancelled",
                 Toast.LENGTH_SHORT).show();
 
@@ -116,6 +128,7 @@ public class PgActivityRetainedFragment extends PgActivity implements PgFragment
 
     @Override
     public void onProgressUpdate(int progress) {
+        // On progress update from the background task set progress bar
         mProgressvalue.setText(progress + "%");
         mProgressBar.setProgress(progress);
     }
