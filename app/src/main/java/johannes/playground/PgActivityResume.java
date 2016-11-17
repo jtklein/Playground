@@ -1,11 +1,16 @@
 package johannes.playground;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.List;
 
 /**
  * Created by johannesklein on 17.11.16.
@@ -18,8 +23,8 @@ public class PgActivityResume extends PgActivity {
     Button mButtonEMailJohannes = null;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_resume);
 
 
@@ -45,7 +50,17 @@ public class PgActivityResume extends PgActivity {
 
                 // Implicit intent to call number
                 Intent callIntent = new Intent(Intent.ACTION_DIAL, uriPhoneNumber);
-                startActivity(callIntent);
+
+                // Start intent if package available
+                if (callIntent != null){
+                    if (isIntentAvailable(callIntent)){
+                        startActivity(callIntent);
+                    } else {
+                        // UX info that no package to start intent is available
+                        Toast.makeText(view.getContext(), "Sorry no phone app available.", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
             }
         });
 
@@ -54,17 +69,33 @@ public class PgActivityResume extends PgActivity {
             public void onClick(View view) {
 
                 // Implicit intent to email my address
-                Intent eMailJohannesIntent = new Intent(Intent.ACTION_SEND);
-                eMailJohannesIntent.setType("plain/text");
+                Intent eMailIntent = new Intent(Intent.ACTION_SEND);
+                eMailIntent.setType("plain/text");
 
                 // Add email address to intent extras
                 String stringEmailAddress = getResources().getString(R.string.data_email_address);
-                eMailJohannesIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {stringEmailAddress});
+                eMailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {stringEmailAddress});
 
-                // Start intent
-                startActivity(eMailJohannesIntent);
+                // Start intent if package available
+                if (eMailIntent != null){
+                    if (isIntentAvailable(eMailIntent)){
+                        startActivity(eMailIntent);
+
+                    } else {
+                        // UX info that no package to start intent is available
+                        Toast.makeText(view.getContext(), "Sorry no email app available.", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
 
             }
         });
+    }
+
+    public boolean isIntentAvailable(Intent intent){
+        PackageManager packageManager = getPackageManager();
+        List<ResolveInfo> activities = packageManager.queryIntentActivities(intent,0);
+        boolean isIntentSafe = activities.size() > 0;
+        return isIntentSafe;
     }
 }
