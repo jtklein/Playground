@@ -13,6 +13,8 @@ public class PgFragmentRetainedFragment extends Fragment {
     public static final String TAG_RETAINED_FRAGMENT = "retained_fragment";
 
     BackgroundTask mBackgroundTask = null;
+    boolean isTaskExecuting = false;
+    
     /**
      * Called once to do initial creation of a fragment.
      */
@@ -22,6 +24,22 @@ public class PgFragmentRetainedFragment extends Fragment {
 
         setRetainInstance(true);
     }
+
+    public void startBackgroundTask() {
+        if(!isTaskExecuting){
+            mBackgroundTask = new BackgroundTask();
+            mBackgroundTask.execute();
+            isTaskExecuting = true;
+        }
+    }
+
+    public void cancelBackgroundTask() {
+        if(isTaskExecuting){
+            mBackgroundTask.cancel(true);
+            isTaskExecuting = false;
+        }
+    }
+
     private class BackgroundTask extends AsyncTask<Void, Integer, Void> {
 
         @Override

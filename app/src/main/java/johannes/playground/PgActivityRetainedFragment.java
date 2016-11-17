@@ -35,10 +35,12 @@ public class PgActivityRetainedFragment extends PgActivity {
             mProgressBar.setProgress(progress);
         }
 
+        // Find the retained fragment attached to the activity
         FragmentManager fragmentManager = getFragmentManager();
         mFragment = (PgFragmentRetainedFragment) fragmentManager
                 .findFragmentByTag(PgFragmentRetainedFragment.TAG_RETAINED_FRAGMENT);
 
+        // If no fragment has been attached add new instance
         if (mFragment == null) {
             mFragment = new PgFragmentRetainedFragment();
             fragmentManager.beginTransaction()
@@ -55,6 +57,7 @@ public class PgActivityRetainedFragment extends PgActivity {
             @Override
             public void onClick(View view) {
 
+                if (mFragment != null)
             }
         });
 
@@ -62,6 +65,8 @@ public class PgActivityRetainedFragment extends PgActivity {
             @Override
             public void onClick(View view) {
 
+                if (mFragment != null)
+                    mFragment.cancelBackgroundTask();
             }
         });
 
@@ -75,8 +80,8 @@ public class PgActivityRetainedFragment extends PgActivity {
     }
 
     /**
-     * This method is called before an activity may be killed Store info in
-     * bundle if required.
+     * This method is called before an activity may be killed.
+     * Store info in bundle if required.
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
