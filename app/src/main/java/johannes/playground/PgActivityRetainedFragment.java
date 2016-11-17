@@ -1,5 +1,6 @@
 package johannes.playground;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
  */
 public class PgActivityRetainedFragment extends PgActivity {
 
+    private PgFragmentRetainedFragment mFragment = null;
     private ProgressBar mProgressBar = null;
     private TextView mProgressvalue = null;
     private Button mButtonStart = null;
@@ -31,6 +33,18 @@ public class PgActivityRetainedFragment extends PgActivity {
             int progress = savedInstanceState.getInt("progress_value");
             mProgressvalue.setText(progress + "%");
             mProgressBar.setProgress(progress);
+        }
+
+        FragmentManager fragmentManager = getFragmentManager();
+        mFragment = (PgFragmentRetainedFragment) fragmentManager
+                .findFragmentByTag(PgFragmentRetainedFragment.TAG_RETAINED_FRAGMENT);
+
+        if (mFragment == null) {
+            mFragment = new PgFragmentRetainedFragment();
+            fragmentManager.beginTransaction()
+                    .add(mFragment, PgFragmentRetainedFragment.TAG_RETAINED_FRAGMENT)
+                    .commit();
+
         }
 
         mButtonStart = (Button) findViewById(R.id.buttonStartRetainedFragment);
