@@ -1,5 +1,6 @@
 package johannes.playground;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -28,6 +29,15 @@ public class PgFragmentRetainedFragment extends Fragment {
     boolean isTaskExecuting = false;
 
     /**
+     * Called when a fragment is first attached to its activity.
+     */
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mStatusCallback = (TaskStatusCallback) activity;
+    }
+
+    /**
      * Called once to do initial creation of a fragment.
      */
     @Override
@@ -35,6 +45,15 @@ public class PgFragmentRetainedFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         setRetainInstance(true);
+    }
+
+    /**
+     * Called when the fragment is no longer attached to its activity.
+     */
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mStatusCallback = null;
     }
 
     public void startBackgroundTask() {
@@ -50,6 +69,10 @@ public class PgFragmentRetainedFragment extends Fragment {
             mBackgroundTask.cancel(true);
             isTaskExecuting = false;
         }
+    }
+
+    public void updateExecutingStatus(boolean isExecuting){
+        this.isTaskExecuting = isExecuting;
     }
 
     private class BackgroundTask extends AsyncTask<Void, Integer, Void> {
