@@ -13,4 +13,10 @@
         android:title="@string/ui_fingerprinting"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/menuItemResume"
+        android:icon="@drawable/ic_account_box_black_24dp"
+        android:title="@string/ui_resume"
+        app:showAsAction="ifRoom" />
+
 </menu>

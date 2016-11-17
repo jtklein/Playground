@@ -27,12 +27,20 @@ public class PgActivity extends AppCompatActivity {
 
             case R.id.menuItemGoHome:
                 // Simple explicit intent to go to main
-                Intent intent = new Intent(this, PgActivityMain.class);
-                startActivity(intent);
+                Intent intentHome = new Intent(this, PgActivityMain.class);
+                startActivity(intentHome);
                 return true;
+
             case R.id.menuItemFingerprint:
                 Toast.makeText(this, "Nothing here yet!", Toast.LENGTH_SHORT).show();
                 return true;
+
+            case R.id.menuItemResume:
+                // Simple explicit intent to go to resume
+                Intent intentResume = new Intent(this, PgActivityResume.class);
+                startActivity(intentResume);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
