@@ -37,5 +37,9 @@
     <string name="ui_multithreading_handlers">Multithreading w Handlers</string>
     <string name="ui_retained_fragment">Retained Fragment</string>
     <string name="ui_resume">Resume</string>
+    <string name="ui_dr_johannes_klein">Dr. Johannes Klein</string>
+    <string name="ui_work_history">Work History</string>
+    <string name="ui_call_me">Call Johannes</string>
+    <string name="ui_email_me">Email Johannes</string>
 
 </resources>
