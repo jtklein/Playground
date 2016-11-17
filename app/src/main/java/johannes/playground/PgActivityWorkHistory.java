@@ -22,9 +22,9 @@ public class PgActivityWorkHistory extends PgActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_work_history);
 
-        mListView = (ListView) findViewById(R.id.listView);
+        mListView = (ListView) findViewById(R.id.listViewWorkHistory);
 
-        mAdapter = new PgListViewWorkHistoryAdapter(this, R.layout.pg_listview_item, mData);
+        mAdapter = new PgListViewWorkHistoryAdapter(this, R.layout.pg_listview_work_history_item, mData);
 
         if (mAdapter != null){
             mListView.setAdapter(mAdapter);
