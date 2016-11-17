@@ -9,6 +9,7 @@ public class PgActivityActivities extends PgActivity {
 
     private Button mButtonActivityLifecycle = null;
     private Button mButtonFragmentLifecycle = null;
+    private Button mButtonRetainedFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,17 @@ public class PgActivityActivities extends PgActivity {
             public void onClick(View view) {
                 // Simple explicit intent
                 Intent intent = new Intent(view.getContext(), PgActivityFragmentLifecycle.class);
+                startActivity(intent);
+            }
+        });
+
+        // Go to retained frgment activity
+        mButtonRetainedFragment = (Button) findViewById(R.id.buttonRetainedFragment);
+        mButtonRetainedFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Simple explicit intent
+                Intent intent = new Intent(view.getContext(), PgActivityRetainedFragment.class);
                 startActivity(intent);
             }
         });

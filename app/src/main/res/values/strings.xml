@@ -35,5 +35,6 @@
     <string name="ui_fab">Floating Action Button</string>
     <string name="ui_multithreading">Multithreading</string>
     <string name="ui_multithreading_handlers">Multithreading w Handlers</string>
+    <string name="ui_retained_fragment">Retained Fragment</string>
 
 </resources>
