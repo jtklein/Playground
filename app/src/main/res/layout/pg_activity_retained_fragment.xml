@@ -32,7 +32,7 @@
             android:text="Progress" />
 
         <TextView
-            android:id="@+id/textViewRetaiedFragment"
+            android:id="@+id/textViewRetainedFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
