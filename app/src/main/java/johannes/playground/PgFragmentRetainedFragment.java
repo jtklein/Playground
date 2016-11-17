@@ -12,9 +12,21 @@ public class PgFragmentRetainedFragment extends Fragment {
 
     public static final String TAG_RETAINED_FRAGMENT = "retained_fragment";
 
+    public static interface TaskStatusCallback {
+        void onPreExecute();
+
+        void onProgressUpdate(int progress);
+
+        void onPostExecute();
+
+        void onCancelled();
+    }
+
+    TaskStatusCallback mStatusCallback;
+
     BackgroundTask mBackgroundTask = null;
     boolean isTaskExecuting = false;
-    
+
     /**
      * Called once to do initial creation of a fragment.
      */
@@ -43,6 +55,12 @@ public class PgFragmentRetainedFragment extends Fragment {
     private class BackgroundTask extends AsyncTask<Void, Integer, Void> {
 
         @Override
+        protected void onPreExecute() {
+            if(mStatusCallback != null)
+                mStatusCallback.onPreExecute();
+        }
+
+        @Override
         protected Void doInBackground(Void... params) {
             int progress = 0;
             while(progress < 100 && !isCancelled()){
@@ -57,5 +75,24 @@ public class PgFragmentRetainedFragment extends Fragment {
             }
             return null;
         }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            if(mStatusCallback != null)
+                mStatusCallback.onPostExecute();
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            if(mStatusCallback != null)
+                mStatusCallback.onProgressUpdate(values[0]);
+        }
+
+        @Override
+        protected void onCancelled(Void result) {
+            if(mStatusCallback != null)
+                mStatusCallback.onCancelled();
+        }
     }
+
 }

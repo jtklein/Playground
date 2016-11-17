@@ -58,6 +58,7 @@ public class PgActivityRetainedFragment extends PgActivity {
             public void onClick(View view) {
 
                 if (mFragment != null)
+                    mFragment.startBackgroundTask();
             }
         });
 
