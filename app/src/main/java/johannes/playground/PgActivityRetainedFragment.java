@@ -7,11 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by johannesklein on 17.11.16.
  */
-public class PgActivityRetainedFragment extends PgActivity {
+public class PgActivityRetainedFragment extends PgActivity implements PgFragmentRetainedFragment.TaskStatusCallback {
 
     private PgFragmentRetainedFragment mFragment = null;
     private ProgressBar mProgressBar = null;
@@ -88,6 +89,35 @@ public class PgActivityRetainedFragment extends PgActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("progress_value", mProgressBar.getProgress());
+    }
+
+    // Background task Callbacks
+
+    @Override
+    public void onPreExecute() {
+        Toast.makeText(getApplicationContext(), "onPreExecute",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPostExecute() {
+        Toast.makeText(getApplicationContext(), "onPostExecute",
+                Toast.LENGTH_SHORT).show();
+        if (mFragment != null)
+            mFragment.updateExecutingStatus(false);
+    }
+
+    @Override
+    public void onCancelled() {
+        Toast.makeText(getApplicationContext(), "onCancelled",
+                Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onProgressUpdate(int progress) {
+        mProgressvalue.setText(progress + "%");
+        mProgressBar.setProgress(progress);
     }
 
 }
