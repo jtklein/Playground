@@ -33,6 +33,28 @@ public class PgActivityLoader extends PgActivity {
         setContentView(R.layout.pg_activity_loader);
 
         mListView = (ListView) findViewById(R.id.listViewLoader);
+    public static class JsonAsyncTaskLoader extends AsyncTaskLoader<List<String>> {
+
+        // The result of the task
+        private List<String> mData;
+
+        private FileObserver mFileObserver;
+
+        public JsonAsyncTaskLoader(Context context) {
+            super(context);
+        }
+
+        /*
+            --> Runs on UI thread
+         */
+
+        @Override
+        protected void onStartLoading() {
+            if (mData != null) {
+                // Use cached data when present
+                deliverResult(mData);
+
+            }
         }
 
         /*
