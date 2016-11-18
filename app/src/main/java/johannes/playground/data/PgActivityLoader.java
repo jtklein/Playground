@@ -21,7 +21,8 @@ import johannes.playground.R;
 /**
  * Created by johannesklein on 18.11.16.
  */
-public class PgActivityLoader extends PgActivity {
+public class PgActivityLoader extends PgActivity implements LoaderManager.LoaderCallbacks<List<String>>{
+
     // A RecyclerView.Adapter which will display the data
     private ArrayAdapter<String> mAdapter;
 
@@ -33,6 +34,33 @@ public class PgActivityLoader extends PgActivity {
         setContentView(R.layout.pg_activity_loader);
 
         mListView = (ListView) findViewById(R.id.listViewLoader);
+
+        getLoaderManager().initLoader(0, null, this);
+
+    }
+
+    @Override
+    public Loader<List<String>> onCreateLoader(int id, Bundle args) {
+        return new JsonAsyncTaskLoader(PgActivityLoader.this);
+    }
+
+    @Override
+    public void onLoadFinished(Loader<List<String>> loader, List<String> data) {
+        // Display our data, for instance updating our adapter
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data);
+        mListView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<List<String>> loader) {
+        // Loader reset, throw away our data,
+        // unregister any listeners, etc.
+        // Of course, unless you use destroyLoader(),
+        // this is called when everything is already dying
+        // so a completely empty onLoaderReset() is
+        // totally acceptable
+    }
+
     public static class JsonAsyncTaskLoader extends AsyncTaskLoader<List<String>> {
 
         // The result of the task
