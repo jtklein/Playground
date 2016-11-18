@@ -19,4 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <ListView
+        android:id="@+id/listViewLoader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
 </LinearLayout>
