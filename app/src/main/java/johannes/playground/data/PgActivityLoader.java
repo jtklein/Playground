@@ -33,5 +33,38 @@ public class PgActivityLoader extends PgActivity {
         setContentView(R.layout.pg_activity_loader);
 
         mListView = (ListView) findViewById(R.id.listViewLoader);
+        }
+
+        /*
+            <-- Runs on UI thread
+         */
+
+        /*
+            --> Runs on background thread
+         */
+
+        @Override
+        public List<String> loadInBackground() {
+        }
+
+        /*
+            <-- Runs on background thread
+         */
+
+        /*
+            --> Runs on UI Thread
+         */
+
+        @Override
+        public void deliverResult(List<String> data) {
+        }
+
+        /*
+            <-- Runs on UI Thread
+         */
+
+        @Override
+        protected void onReset() {
+        }
     }
 }
