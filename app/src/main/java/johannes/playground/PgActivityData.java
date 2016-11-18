@@ -9,73 +9,23 @@ import android.widget.Button;
 /**
  * Created by johannesklein on 10.11.16.
  */
-public class PgActivityData extends PgActivity{
+public class PgActivityData extends PgActivityButtonMenu {
 
-    private Button mButtonParseJSON = null;
-    private Button mButtonControlFlow = null;
-    private Button mButtonNetworking = null;
-    private Button mButtonMultithreading = null;
-    private Button mButtonMultithreadingHandlers = null;
+    private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
+            new PgListViewButtonMenuItem(R.string.ui_parse_json, PgActivityParseJSON.class),
+            new PgListViewButtonMenuItem(R.string.ui_control_flow, PgActivityControlFlow.class),
+            new PgListViewButtonMenuItem(R.string.ui_networking, PgActivityNetworking.class),
+            new PgListViewButtonMenuItem(R.string.ui_multithreading, PgActivityMultithreading.class),
+            new PgListViewButtonMenuItem(R.string.ui_multithreading_handlers, PgActivityMultithreadingHandlers.class),
+    };
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pg_activity_data);
 
-        // Go to parse JSON activity
-        mButtonParseJSON = (Button) findViewById(R.id.buttonParseJSON);
-        mButtonParseJSON.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityParseJSON.class);
-                startActivity(intent);
-            }
-        });
-
-        // Go to controlflow activity
-        mButtonControlFlow = (Button) findViewById(R.id.buttonControlFlow);
-        mButtonControlFlow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityControlFlow.class);
-                startActivity(intent);
-            }
-        });
-
-        // Go to networking activity
-        mButtonNetworking = (Button) findViewById(R.id.buttonNetworking);
-        mButtonNetworking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityNetworking.class);
-                startActivity(intent);
-            }
-        });
-
-        // Go to multithreading activity
-        mButtonMultithreading = (Button) findViewById(R.id.buttonMultithreading);
-        mButtonMultithreading.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityMultithreading.class);
-                startActivity(intent);
-            }
-        });
-
-        // Go to multithreading with handlers activity
-        mButtonMultithreadingHandlers = (Button) findViewById(R.id.buttonMultithreadingHandlers);
-        mButtonMultithreadingHandlers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityMultithreadingHandlers.class);
-                startActivity(intent);
-            }
-        });
+        super.setTheAdapter(mData);
 
     }
 }
+
+

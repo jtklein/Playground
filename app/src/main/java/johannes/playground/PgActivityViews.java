@@ -9,37 +9,18 @@ import android.widget.Button;
 /**
  * Created by johannesklein on 09.11.16.
  */
-public class PgActivityViews extends PgActivity {
+public class PgActivityViews extends PgActivityButtonMenu {
 
-    private Button mButtonListView = null;
-    private Button mButtonFloatingActionButton = null;
+    private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
+            new PgListViewButtonMenuItem(R.string.ui_listview, PgActivityListView.class),
+            new PgListViewButtonMenuItem(R.string.ui_fab, PgActivityFloatingActionButton.class),
+    };
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pg_activity_views);
 
-        // Button to go to ListViewActivity
-        mButtonListView = (Button) findViewById(R.id.buttonListView);
-        mButtonListView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple Explicit Intent
-                Intent intent = new Intent(view.getContext(), PgActivityListView.class);
-                startActivity(intent);
-            }
-        });
-
-        // Button to go to floating action button activity
-        mButtonFloatingActionButton = (Button) findViewById(R.id.buttonFAB);
-        mButtonFloatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityFloatingActionButton.class);
-                startActivity(intent);
-            }
-        });
+        super.setTheAdapter(mData);
 
     }
 }

@@ -9,37 +9,18 @@ import android.widget.Button;
 /**
  * Created by johannesklein on 10.11.16.
  */
-public class PgActivityPersistance extends PgActivity {
+public class PgActivityPersistance extends PgActivityButtonMenu {
 
-    private Button mButtonSharedPreferences = null;
-    private Button mButtonFiles = null;
+    private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
+            new PgListViewButtonMenuItem(R.string.ui_shared_preferences, PgActivitySharedPreferences.class),
+            new PgListViewButtonMenuItem(R.string.ui_files, PgActivityFiles.class),
+    };
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pg_activity_persistance);
 
-        // The button to go to shared preferences
-        mButtonSharedPreferences = (Button) findViewById(R.id.buttonSharedPreferences);
-        mButtonSharedPreferences.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivitySharedPreferences.class);
-                startActivity(intent);
-            }
-        });
-
-        // The button to go to files
-        mButtonFiles = (Button) findViewById(R.id.buttonFiles);
-        mButtonFiles.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityFiles.class);
-                startActivity(intent);
-            }
-        });
+        super.setTheAdapter(mData);
 
     }
 }

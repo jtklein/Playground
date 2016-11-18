@@ -5,83 +5,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class PgActivityMain extends PgActivity {
+public class PgActivityMain extends PgActivityButtonMenu {
 
-    private Button mButtonActivities = null;
-    private Button mButtonIntents = null;
-    private Button mButtonViews = null;
-    private Button mButtonPersistance = null;
-    private Button mButtonData = null;
-    private Button mButtonUser = null;
+    private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
+            new PgListViewButtonMenuItem(R.string.ui_activities, PgActivityActivities.class),
+            new PgListViewButtonMenuItem(R.string.ui_intents, PgActivityIntents.class),
+            new PgListViewButtonMenuItem(R.string.ui_persistance, PgActivityPersistance.class),
+            new PgListViewButtonMenuItem(R.string.ui_data, PgActivityData.class),
+            new PgListViewButtonMenuItem(R.string.ui_user, PgActivityUser.class),
+            new PgListViewButtonMenuItem(R.string.ui_views, PgActivityViews.class),
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pg_activity_main);
 
-        // The button to go to activities playground
-        mButtonActivities = (Button) findViewById(R.id.buttonActivities);
-        mButtonActivities.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple intent
-                Intent intent = new Intent(view.getContext(), PgActivityActivities.class);
-                startActivity(intent);
-            }
-        });
+        super.setTheAdapter(mData);
 
-        // The button to go to intents playground
-        mButtonIntents = (Button) findViewById(R.id.buttonIntents);
-        mButtonIntents.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityIntents.class);
-                startActivity(intent);
-            }
-        });
-
-        // The button to go to view playground
-        mButtonViews = (Button) findViewById(R.id.buttonViews);
-        mButtonViews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityViews.class);
-                startActivity(intent);
-            }
-        });
-
-        // The button to go to persistance playground
-        mButtonPersistance = (Button) findViewById(R.id.buttonPersistance);
-        mButtonPersistance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityPersistance.class);
-                startActivity(intent);
-            }
-        });
-
-        // The button to go to data playground
-        mButtonData = (Button) findViewById(R.id.buttonData);
-        mButtonData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), PgActivityData.class);
-                startActivity(intent);
-            }
-        });
-
-        // The button to go to user playground
-        mButtonUser = (Button) findViewById(R.id.buttonUser);
-        mButtonUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Simple explicit intent
-                Intent intent = new Intent(view.getContext(), PgActivityUser.class);
-                startActivity(intent);
-            }
-        });
     }
 }
