@@ -1,9 +1,13 @@
 package johannes.playground;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+
+import johannes.playground.activities.PgActivityActivities;
+import johannes.playground.data.PgActivityData;
+import johannes.playground.intents.PgActivityIntents;
+import johannes.playground.persistance.PgActivityPersistance;
+import johannes.playground.user.PgActivityUser;
+import johannes.playground.views.PgActivityViews;
 
 public class PgActivityMain extends PgActivityButtonMenu {
 

@@ -27,87 +27,87 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PgActivityImplicitIntents"
+            android:name=".intents.PgActivityImplicitIntents"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityIntents"
+            android:name=".intents.PgActivityIntents"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivitySendIntentExtras"
+            android:name=".intents.PgActivitySendIntentExtras"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityReceiveIntentExtras"
+            android:name=".intents.PgActivityReceiveIntentExtras"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityActivities"
+            android:name=".activities.PgActivityActivities"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityLifecycle"
+            android:name=".activities.PgActivityLifecycle"
             android:exported="false" />
         <activity
-            android:name=".PgActivityViews"
+            android:name=".views.PgActivityViews"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityListView"
+            android:name=".views.PgActivityListView"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityPersistance"
+            android:name=".persistance.PgActivityPersistance"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityData"
+            android:name=".data.PgActivityData"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityParseJSON"
+            android:name=".data.PgActivityParseJSON"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivitySharedPreferences"
+            android:name=".persistance.PgActivitySharedPreferences"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityFiles"
+            android:name=".persistance.PgActivityFiles"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityFragmentLifecycle"
+            android:name=".activities.PgActivityFragmentLifecycle"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityControlFlow"
+            android:name=".data.PgActivityControlFlow"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityUser"
+            android:name=".user.PgActivityUser"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityToast"
+            android:name=".user.PgActivityToast"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityNotification"
+            android:name=".user.PgActivityNotification"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityIntentRequest"
+            android:name=".intents.PgActivityIntentRequest"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PgActivityIntentRequestSelection"
+            android:name=".intents.PgActivityIntentRequestSelection"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".PgActivityIntentReceiver"
+            android:name=".intents.PgActivityIntentReceiver"
             android:screenOrientation="portrait">
             <intent-filter>
                 <data android:scheme="http" android:host="www.gbif.org"/>
@@ -118,47 +118,52 @@
         </activity>
 
         <activity
-            android:name=".PgActivityDialog"
+            android:name=".user.PgActivityDialog"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".PgActivityPicker"
+            android:name=".user.PgActivityPicker"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".PgActivityNetworking"
+            android:name=".data.PgActivityNetworking"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".PgActivityFloatingActionButton"
+            android:name=".views.PgActivityFloatingActionButton"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".PgActivityMultithreading"
+            android:name=".data.PgActivityMultithreading"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".PgActivityMultithreadingHandlers"
+            android:name=".data.PgActivityMultithreadingHandlers"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".PgActivityRetainedFragment"
+            android:name=".activities.PgActivityRetainedFragment"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".PgActivityResume"
+            android:name=".resume.PgActivityResume"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".PgActivityWorkHistory"
+            android:name=".resume.PgActivityWorkHistory"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".data.PgActivityLoader"
             android:exported="false"
             android:screenOrientation="portrait" />
 

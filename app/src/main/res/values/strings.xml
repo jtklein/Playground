@@ -43,5 +43,6 @@
     <string name="ui_email_me">Email Johannes</string>
     <string name="data_phone_number">+49...</string>
     <string name="data_email_address">mymail@address.com</string>
+    <string name="ui_loader">Loader</string>
 
 </resources>
