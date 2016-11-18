@@ -37,5 +37,28 @@ public class PgActivityFloatingActionButton extends PgActivity {
         mAdapter = new PgListViewExampleAdapter(this, R.layout.pg_listview_item, mData);
 
         mListView.setAdapter(mAdapter);
+
+        mFAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                count++;
+
+                PgListViewExampleItem[] newData = new PgListViewExampleItem[count];
+
+                for (int i = 0; i < mData.length; i++){
+
+                    newData[i] = mData[i];
+                }
+
+                PgListViewExampleItem newItem = new PgListViewExampleItem("Item no " + count, "", "");
+                newData[count-1] = newItem;
+
+                mData = newData;
+
+                // TODO REload data
+            }
+        });
+
     }
 }
