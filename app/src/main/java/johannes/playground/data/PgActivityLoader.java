@@ -55,6 +55,26 @@ public class PgActivityLoader extends PgActivity {
                 deliverResult(mData);
 
             }
+            if (mFileObserver == null) {
+                String path = new File(getContext().getFilesDir(), "downloaded.json").getPath();
+                mFileObserver = new FileObserver(path) {
+                    @Override
+                    public void onEvent(int event, String path) {
+                        // Notify the loader to reload the data
+                        onContentChanged();
+                        // If the loader is started, this will kick off
+                        // loadInBackground() immediately. Otherwise,
+                        // the fact that something changed will be cached
+                        // and can be later retrieved via takeContentChanged()
+                    }
+                };
+                mFileObserver.startWatching();
+            }
+            if (takeContentChanged() || mData == null) {
+                // We have no data or FileObserver registered a change, so start loading
+                forceLoad();
+
+            }
         }
 
         /*
@@ -87,6 +107,11 @@ public class PgActivityLoader extends PgActivity {
 
         @Override
         protected void onReset() {
+            // Stop watching for file changes
+            if (mFileObserver != null) {
+                mFileObserver.stopWatching();
+                mFileObserver = null;
+            }
         }
     }
 }
