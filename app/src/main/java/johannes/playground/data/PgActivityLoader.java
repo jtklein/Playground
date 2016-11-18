@@ -87,6 +87,17 @@ public class PgActivityLoader extends PgActivity {
 
         @Override
         public List<String> loadInBackground() {
+            // Good to know: the Context returned by getContext() is the application context
+            File jsonFile = new File(getContext().getFilesDir(), "downloaded.json");
+            List<String> data = new ArrayList<>();
+            for (int i = 0; i < 100; i++){
+                String randomNumber = String.valueOf((int) (Math.random() * 100));
+                data.add("Item " + randomNumber);
+            }
+
+            // TODO Background stuff, e.g. get file, parsing JSON
+            // Check isLoadInBackgroundCanceled() to cancel out early
+            return data;
         }
 
         /*
