@@ -6,12 +6,12 @@ package johannes.playground;
 
 public class PgListViewButtonMenuItem {
 
-    public String text;
+    public int stringID;
     public Class gotoClass;
 
-    public PgListViewButtonMenuItem(String text, Class gotoClass) {
+    public PgListViewButtonMenuItem(int stringID, Class gotoClass) {
 
-        this.text = text;
+        this.stringID = stringID;
         this.gotoClass = gotoClass;
     }
 }

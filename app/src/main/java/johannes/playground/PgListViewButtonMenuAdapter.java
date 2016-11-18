@@ -60,7 +60,7 @@ public class PgListViewButtonMenuAdapter extends ArrayAdapter<PgListViewButtonMe
 
         // Get the data and display
         PgListViewButtonMenuItem item = mData[position];
-        holder.button.setText(item.text);
+        holder.button.setText(mContext.getResources().getString(item.stringID));
 
         // Add onClick Listener to holder in order to be reused
         holder.button.setTag(position);
