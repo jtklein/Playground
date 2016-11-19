@@ -34,6 +34,13 @@ public class PgActivityTicTacToe extends PgActivity {
 
     private static final int[] unplayedBoard = mBoardStatus.clone();
 
+    // A player has won if he occupies one of these combinations first
+    private static final int[][] winningPositions = {
+            {0,1,2}, {3,4,5}, {6,7,8}, // Horizontal
+            {0,3,6}, {1,4,7}, {2,5,8}, // Vertical
+            {0,4,8}, {2,4,6}           // Diagonal
+    };
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,14 +72,33 @@ public class PgActivityTicTacToe extends PgActivity {
         // Set the status of the current field to the player status
         mBoardStatus[tappedView] = getPlayer();
 
-        // Switch turns
-        redIsPlaying = !redIsPlaying;
+
 
         if (checkIfDraw()) {
             mTextView.setText("It's a draw!");
             gameOver();
 
         }
+
+        if (checkIfWon()){
+
+            String winner = null;
+            switch (getPlayer()){
+                case 0:
+                    // Red has won
+                    winner = "Red";
+                    break;
+                case 1:
+                    // Yellow has won
+                    winner = "Yellow";
+                    break;
+            }
+            mTextView.setText(winner + " has won!");
+            gameOver();
+        }
+
+        // Switch turns
+        redIsPlaying = !redIsPlaying;
     }
 
     private void resetBoard() {
@@ -120,6 +146,21 @@ public class PgActivityTicTacToe extends PgActivity {
         return false;
     }
 
+    private boolean checkIfWon(){
+        // If any of the possible winning combos is owned by won player the game is won
+        for (int[] combo : winningPositions){
+            int a = combo[0];
+            int b = combo[1];
+            int c = combo[2];
+            if (mBoardStatus[a] == mBoardStatus[b] && mBoardStatus[b] == mBoardStatus[c] &&
+                    mBoardStatus[b] != 2){
+                return true;
+
+            }
+        }
+        return false;
+    }
+
     private void gameOver(){
         // Show game Over message
         mLinearLayout.setVisibility(View.VISIBLE);
@@ -130,7 +171,5 @@ public class PgActivityTicTacToe extends PgActivity {
                 mLinearLayout.setVisibility(View.INVISIBLE);
             }
         });
-
-
     }
 }
