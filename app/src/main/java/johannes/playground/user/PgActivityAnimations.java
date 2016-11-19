@@ -47,6 +47,21 @@ public class PgActivityAnimations extends PgActivity {
             }
         });
 
+        mButtonRotate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start rotate animation
+                rotate();
+            }
+        });
+
+
+    private void rotate() {
+        // Reset and animate image to rotate
+        resetImage();
+        mImageView.animate().rotation(360f).setDuration(animationDuration);
+
+    }
 
     private void fade() {
         // Reset and animate image to transparent
