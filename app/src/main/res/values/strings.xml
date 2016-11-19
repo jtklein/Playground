@@ -47,5 +47,6 @@
     <string name="ui_examples">Examples</string>
     <string name="ui_higher_or_lower">Higher or Lower</string>
     <string name="ui_number_shapes">Number Shapes</string>
+    <string name="ui_tic_tac_toe">Tic Tac Toe</string>
 
 </resources>
