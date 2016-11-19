@@ -55,6 +55,24 @@ public class PgActivityAnimations extends PgActivity {
             }
         });
 
+        mButtonDrop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start drop animation
+                drop();
+            }
+        });
+
+
+    private void drop() {
+        // Reset image and move off screen
+        resetImage();
+        mImageView.setTranslationY(-500f);
+
+        // Animate image to drop
+        mImageView.animate().translationYBy(500f).setDuration(animationDuration/2);
+
+    }
 
     private void rotate() {
         // Reset and animate image to rotate
