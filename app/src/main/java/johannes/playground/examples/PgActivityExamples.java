@@ -14,6 +14,7 @@ public class PgActivityExamples extends PgActivityButtonMenu {
 
     private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
         new PgListViewButtonMenuItem(R.string.ui_higher_or_lower, PgActivityHigherLower.class),
+        new PgListViewButtonMenuItem(R.string.ui_number_shapes, PgActivityNumberShapes.class),
 
     };
 

@@ -177,6 +177,11 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".examples.numbershapes.PgActivityNumberShapes"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
 
     </application>
 
