@@ -53,5 +53,7 @@
     <string name="ui_audio">Audio</string>
     <string name="ui_phrase_book">Phrase Book</string>
     <string name="ui_times_tables">Times Tables</string>
+    <string name="ui_architecture">Architecture</string>
+    <string name="ui_timer">Timer</string>
 
 </resources>
