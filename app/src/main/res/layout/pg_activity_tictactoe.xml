@@ -1,6 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:text="@string/ui_tic_tac_toe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_size_big" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.GridLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:grid="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/board"
+            grid:alignmentMode="alignBounds"
+            grid:columnCount="3"
+            grid:rowCount="3" >
+
+            <ImageView
+                android:tag="0"
+                android:id="@+id/imageViewTicTacToe0"
+                style="@style/PrimaryImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                grid:layout_columnWeight="1"
+                grid:layout_rowWeight="1"
+                grid:layout_gravity="fill" />
+
+            <ImageView
+                android:tag="1"
+                android:id="@+id/imageViewTicTacToe1"
+                style="@style/PrimaryImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                grid:layout_columnWeight="1"
+                grid:layout_rowWeight="1"
+                grid:layout_gravity="fill" />
+
+            <ImageView
+                android:tag="2"
+                android:id="@+id/imageViewTicTacToe2"
+                style="@style/PrimaryImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                grid:layout_columnWeight="1"
+                grid:layout_rowWeight="1"
+                grid:layout_gravity="fill" />
+
+            <ImageView
+                android:tag="3"
+                android:id="@+id/imageViewTicTacToe3"
+                style="@style/PrimaryImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                grid:layout_columnWeight="1"
+                grid:layout_rowWeight="1"
+                grid:layout_gravity="fill" />
+
+            <ImageView
+                android:tag="4"
+                android:id="@+id/imageViewTicTacToe4"
+                style="@style/PrimaryImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                grid:layout_columnWeight="1"
+                grid:layout_rowWeight="1"
+                grid:layout_gravity="fill" />
+
+            <ImageView
+                android:tag="5"
+                android:id="@+id/imageViewTicTacToe5"
+                style="@style/PrimaryImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                grid:layout_columnWeight="1"
+                grid:layout_rowWeight="1"
+                grid:layout_gravity="fill" />
+
+            <ImageView
+                android:tag="6"
+                android:id="@+id/imageViewTicTacToe6"
+                style="@style/PrimaryImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                grid:layout_columnWeight="1"
+                grid:layout_rowWeight="1"
+                grid:layout_gravity="fill" />
+
+            <ImageView
+                android:tag="7"
+                android:id="@+id/imageViewTicTacToe7"
+                style="@style/PrimaryImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                grid:layout_columnWeight="1"
+                grid:layout_rowWeight="1"
+                grid:layout_gravity="fill" />
+
+            <ImageView
+                android:tag="8"
+                android:id="@+id/imageViewTicTacToe8"
+                style="@style/PrimaryImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                grid:layout_columnWeight="1"
+                grid:layout_rowWeight="1"
+                grid:layout_gravity="fill" />
+
+        </android.support.v7.widget.GridLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>

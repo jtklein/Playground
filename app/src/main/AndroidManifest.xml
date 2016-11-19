@@ -182,6 +182,10 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".examples.tictactoe.PgActivityTicTacToe"
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
     </application>
 
