@@ -1,4 +1,4 @@
-package johannes.playground.examples;
+package johannes.playground.examples.phrasebook;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;

@@ -202,7 +202,12 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".examples.PgActivityPhraseBook"
+            android:name=".examples.phrasebook.PgActivityPhraseBook"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".examples.timestables.PgActivityTimesTables"
             android:exported="false"
             android:screenOrientation="portrait" />
 
