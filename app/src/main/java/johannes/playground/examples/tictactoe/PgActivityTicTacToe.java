@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayout;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import johannes.playground.PgActivity;
 import johannes.playground.R;
@@ -14,7 +17,11 @@ import johannes.playground.R;
  */
 public class PgActivityTicTacToe extends PgActivity {
 
-    ImageView mImageView = null;
+    private LinearLayout mLinearLayout = null;
+    private TextView mTextView = null;
+    private Button mButton = null;
+
+    private ImageView mImageView = null;
 
     private static boolean redIsPlaying = true;
 
@@ -31,6 +38,10 @@ public class PgActivityTicTacToe extends PgActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_tictactoe);
+
+        mLinearLayout = (LinearLayout) findViewById(R.id.linearLayoutTicTacToe);
+        mTextView = (TextView) findViewById(R.id.textViewTicTacToe);
+        mButton = (Button) findViewById(R.id.mButtonPlayTicTacToe);
 
     }
 
@@ -58,7 +69,8 @@ public class PgActivityTicTacToe extends PgActivity {
         redIsPlaying = !redIsPlaying;
 
         if (checkIfDraw()) {
-            resetBoard();
+            mTextView.setText("It's a draw!");
+            gameOver();
 
         }
     }
@@ -106,5 +118,19 @@ public class PgActivityTicTacToe extends PgActivity {
             return true;
         }
         return false;
+    }
+
+    private void gameOver(){
+        // Show game Over message
+        mLinearLayout.setVisibility(View.VISIBLE);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetBoard();
+                mLinearLayout.setVisibility(View.INVISIBLE);
+            }
+        });
+
+
     }
 }

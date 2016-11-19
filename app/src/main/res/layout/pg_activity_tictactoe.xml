@@ -136,6 +136,34 @@
 
         </android.support.v7.widget.GridLayout>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:padding="30dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/linearLayoutTicTacToe"
+            android:visibility="invisible" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewTicTacToe"
+                android:layout_gravity="center_horizontal"
+                android:textSize="30sp" />
+
+            <Button
+                style="@style/PrimaryButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play Again"
+                android:id="@+id/mButtonPlayTicTacToe"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
     </RelativeLayout>
 
 </LinearLayout>
