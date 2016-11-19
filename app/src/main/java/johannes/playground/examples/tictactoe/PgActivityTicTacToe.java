@@ -2,6 +2,7 @@ package johannes.playground.examples.tictactoe;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayout;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -23,6 +24,9 @@ public class PgActivityTicTacToe extends PgActivity {
             2,2,2,
             2,2,2,
     };
+
+    private static final int[] unplayedBoard = mBoardStatus.clone();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +57,31 @@ public class PgActivityTicTacToe extends PgActivity {
         // Switch turns
         redIsPlaying = !redIsPlaying;
 
+        if (checkIfDraw()) {
+            resetBoard();
+
+        }
+    }
+
+    private void resetBoard() {
+        // Remove images
+        GridLayout gridLayout = (GridLayout)findViewById(R.id.gridLayoutTicTacToe);
+        for (int i = 0; i< gridLayout.getChildCount(); i++) {
+            ((ImageView) gridLayout.getChildAt(i)).setImageResource(0);
+        }
+
+        // Reset board status
+        mBoardStatus = unplayedBoard.clone();
+    }
+
+    private boolean checkIfDraw() {
+        // Check if there is a draw
+        for (int field : mBoardStatus){
+            if (field == 2){
+                return false;
+            }
+        }
+        return true;
     }
 
     private int getPlayerImage() {
