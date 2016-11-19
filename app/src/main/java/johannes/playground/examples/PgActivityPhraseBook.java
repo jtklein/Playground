@@ -2,6 +2,7 @@ package johannes.playground.examples;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 
 import johannes.playground.PgActivity;
 import johannes.playground.R;
@@ -15,5 +16,8 @@ public class PgActivityPhraseBook extends PgActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_phrasebook);
+    }
+
+    public void buttonTapped(View view) {
     }
 }

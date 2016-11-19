@@ -19,4 +19,36 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <Button
+        android:onClick="buttonTapped"
+        style="@style/PrimaryButton"
+        android:text="Hello!"
+        android:id="@+id/hello"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="buttonTapped"
+        style="@style/PrimaryButton"
+        android:text="My name is ..."
+        android:id="@+id/mynameis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="buttonTapped"
+        style="@style/PrimaryButton"
+        android:text="Do you speak English?"
+        android:id="@+id/doyouspeakenglish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="buttonTapped"
+        style="@style/PrimaryButton"
+        android:text="Please!"
+        android:id="@+id/please"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
