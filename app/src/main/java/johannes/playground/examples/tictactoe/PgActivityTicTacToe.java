@@ -15,6 +15,8 @@ public class PgActivityTicTacToe extends PgActivity {
 
     ImageView mImageView = null;
 
+    private static boolean redIsPlaying = true;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,17 +26,29 @@ public class PgActivityTicTacToe extends PgActivity {
 
 
     public void dropIn(View view) {
-
+        // Get the clicked view
         mImageView = (ImageView) view;
 
-        int tappedView = Integer.parseInt(mImageView.getTag().toString());
+        // int tappedView = Integer.parseInt(mImageView.getTag().toString());
 
+        mImageView.setImageResource(whosPlaying());
+
+        // Move image off screen and animate drop
         mImageView.setTranslationY(-1000f);
-
-        mImageView.setImageResource(R.drawable.red);
-
         mImageView.animate().translationYBy(1000f).setDuration(400);
 
+
+    }
+
+    private int whosPlaying() {
+        // Check which player
+        if (redIsPlaying){
+            redIsPlaying = false;
+            return R.drawable.red;
+        }
+        redIsPlaying = true;
+        return R.drawable.yellow;
+    }
 
     }
 }
