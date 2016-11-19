@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import johannes.playground.PgActivity;
 import johannes.playground.R;
 
@@ -86,5 +89,39 @@ public class PgActivityAudio extends PgActivity {
 
             }
         });
+
+        // Get duration of audio
+        int duration = mMediaPlayer.getDuration();
+
+        // Translate duration into seekBar MaxValue
+        mSeekBarScrubber.setMax(duration);
+        mSeekBarScrubber.setProgress(mMediaPlayer.getCurrentPosition());
+
+        mSeekBarScrubber.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                // Set audio to current time
+                mMediaPlayer.seekTo(i);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        // Schedule a new timer to sync seek bar
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                mSeekBarScrubber.setProgress(mMediaPlayer.getCurrentPosition());
+            }
+        }, 0, 100);
+
     }
 }
