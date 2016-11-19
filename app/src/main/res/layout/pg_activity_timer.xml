@@ -19,4 +19,71 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <TextView
+        style="@style/SecondLevelTextView"
+        android:text="Duration:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:weightSum="6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <SeekBar
+            android:max="100"
+            android:layout_weight="5"
+            android:id="@+id/seekBarDurationTimer"
+            android:padding="@dimen/material_margin_first_tier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/SecondLevelTextView"
+            android:id="@+id/textViewDurationTimer"
+            android:text="2s"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/SecondLevelTextView"
+        android:text="Tick time:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:weightSum="6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <SeekBar
+            android:max="10"
+            android:layout_weight="5"
+            android:id="@+id/seekBarTickTimer"
+            android:padding="@dimen/material_margin_first_tier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/SecondLevelTextView"
+            android:id="@+id/textViewTickTimer"
+            android:text="1s"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonStartTimer"
+        style="@style/PrimaryButton"
+        android:text="Start Timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
