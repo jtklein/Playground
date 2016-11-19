@@ -37,10 +37,13 @@ public class PgActivityHigherLower extends PgActivity {
 
         if (guessInt != 0){
             if (guessInt > randomNumber){
+                L.t(this, "Lower!");
 
             } else if (guessInt < randomNumber){
+                L.t(this, "Higher!");
 
             } else {
+                L.t(this, "Yeah, correct! Try again!");
 
                 generateRandom();
 
