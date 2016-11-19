@@ -1,12 +1,14 @@
 package johannes.playground.architecture.timer;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import johannes.playground.L;
 import johannes.playground.PgActivity;
 import johannes.playground.R;
 
@@ -20,6 +22,8 @@ public class PgActivityTimer extends PgActivity {
 
     private TextView mTextViewDuration = null;
     private TextView mTextViewTick = null;
+
+    private Button mButton = null;
 
     private static final int minValueDuration = 2;
     private static final int minValueTick = 1;
@@ -35,6 +39,8 @@ public class PgActivityTimer extends PgActivity {
 
         mTextViewDuration = (TextView) findViewById(R.id.textViewDurationTimer);
         mTextViewTick = (TextView) findViewById(R.id.textViewTickTimer);
+
+        mButton = (Button) findViewById(R.id.buttonStartTimer);
 
         mSeekBarDuration.setProgress(minValueDuration);
         mSeekBarTick.setProgress(minValueTick);
@@ -91,6 +97,26 @@ public class PgActivityTimer extends PgActivity {
             }
         });
 
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                int duration = mSeekBarDuration.getProgress() * 1000;
+                int tick = mSeekBarTick.getProgress() * 1000;
+
+                new CountDownTimer(duration, tick) {
+                    @Override
+                    public void onTick(long l) {
+                        L.t(getApplicationContext(), "Tick!");
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        L.t(getApplicationContext(), "Boom!", 0);
+
+                    }
+                }.start();
+            }
+        });
     }
 }

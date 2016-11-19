@@ -13,4 +13,8 @@ public class L {
     public static void t(Context context, String string){
         Toast.makeText(context, string, Toast.LENGTH_SHORT).show();
     }
+
+    public static void t(Context context, String string, int i) {
+        Toast.makeText(context, string, Toast.LENGTH_LONG).show();
+    }
 }
