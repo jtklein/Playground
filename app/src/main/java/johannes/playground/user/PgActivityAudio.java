@@ -4,6 +4,7 @@ import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 
@@ -36,6 +37,24 @@ public class PgActivityAudio extends PgActivity {
 
         // Get new MediaPlayer instance
         mMediaPlayer = MediaPlayer.create(this, R.raw.laugh);
-        mMediaPlayer.start();
+
+        mButtonPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start audio file
+                mMediaPlayer.start();
+
+            }
+        });
+
+        mButtonPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // SPause audio file
+                mMediaPlayer.pause();
+
+            }
+        });
+
     }
 }
