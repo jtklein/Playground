@@ -20,6 +20,9 @@ public class PgActivityAnimations extends PgActivity {
     Button mButtonResize = null;
 
     ImageView mImageView = null;
+
+    private static final int animationDuration = 2000;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,22 @@ public class PgActivityAnimations extends PgActivity {
         mImageView.setImageResource(R.drawable.red);
 
         resetImage();
+
+        mButtonFade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start fade animation
+                fade();
+            }
+        });
+
+
+    private void fade() {
+        // Reset and animate image to transparent
+        resetImage();
+        mImageView.animate().alpha(0f).setDuration(animationDuration);
+
+    }
 
     private void resetImage() {
         // Set image intransparent
