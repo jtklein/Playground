@@ -23,6 +23,8 @@ public class PgActivityAnimations extends PgActivity {
 
     private static final int animationDuration = 2000;
 
+    private static boolean switchResize = false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +65,28 @@ public class PgActivityAnimations extends PgActivity {
             }
         });
 
+        mButtonResize.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start resizing animation
+                resize();
+            }
+        });
+    }
+
+    private void resize() {
+        // Reset image
+        resetImage();
+
+        // Animate depending on switch
+        if (!switchResize) {
+            mImageView.animate().scaleX(0.5f).scaleY(0.5f).setDuration(animationDuration);
+            switchResize = true;
+        } else {
+            mImageView.animate().scaleX(1f).scaleY(1f).setDuration(animationDuration);
+            switchResize = false;
+        }
+    }
 
     private void drop() {
         // Reset image and move off screen
