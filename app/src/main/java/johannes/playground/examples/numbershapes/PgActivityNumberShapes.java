@@ -27,7 +27,7 @@ public class PgActivityNumberShapes extends PgActivity {
         EditText editText = (EditText) findViewById(R.id.editTextNumberShapes);
 
         if (editText.getText().toString().isEmpty()){
-            
+
         } else {
 
             Number inputNumber = new Number();

@@ -1,4 +1,4 @@
-package johannes.playground.examples;
+package johannes.playground.examples.higherlower;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

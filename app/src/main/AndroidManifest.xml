@@ -173,7 +173,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".examples.PgActivityHigherLower"
+            android:name=".examples.higherlower.PgActivityHigherLower"
             android:exported="false"
             android:screenOrientation="portrait" />
 
