@@ -37,11 +37,20 @@
     </style>
 
     <!-- Custom header text view style -->
-    <style name="HeaderTextView" parent="@android:style/Widget.TextView">
-        <item name="android:textSize">@dimen/text_size_huge</item>
+    <style name="PrimaryTextView" parent="@android:style/Widget.TextView">
         <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <!-- Custom header text view style -->
+    <style name="HeaderTextView" parent="PrimaryTextView">
+        <item name="android:textSize">@dimen/text_size_huge</item>
         <item name="android:padding">@dimen/material_margin_first_tier</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Custom second level text view style -->
+    <style name="SecondLevelTextView" parent="PrimaryTextView">
+        <item name="android:textSize">@dimen/text_size_big</item>
     </style>
 
     <!-- Custom spinner style -->
