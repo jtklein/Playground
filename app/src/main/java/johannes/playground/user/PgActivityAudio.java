@@ -100,8 +100,10 @@ public class PgActivityAudio extends PgActivity {
         mSeekBarScrubber.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                // Set audio to current time
-                mMediaPlayer.seekTo(i);
+                // Set audio to current time if from user
+                if (b){
+                    mMediaPlayer.seekTo(i);
+                }
             }
 
             @Override
