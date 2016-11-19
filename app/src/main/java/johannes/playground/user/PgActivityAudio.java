@@ -1,6 +1,7 @@
 package johannes.playground.user;
 
 import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,6 +24,7 @@ public class PgActivityAudio extends PgActivity {
     private SeekBar mSeekBarScrubber = null;
 
     private MediaPlayer mMediaPlayer = null;
+    private AudioManager mManager = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,5 +58,33 @@ public class PgActivityAudio extends PgActivity {
             }
         });
 
+        // Get an instance of the AudioManager
+        mManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
+        // Get current and max volume
+        int maxVolume = mManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        int curVolume = mManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+
+        // Translate possible Volume into SeekBar MaxValue
+        mSeekBarVolume.setMax(maxVolume);
+        mSeekBarVolume.setProgress(curVolume);
+
+        mSeekBarVolume.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+                mManager.setStreamVolume(AudioManager.STREAM_MUSIC, i, 0);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 }
