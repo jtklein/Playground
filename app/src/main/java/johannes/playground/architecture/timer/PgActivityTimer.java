@@ -2,6 +2,8 @@ package johannes.playground.architecture.timer;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -36,6 +38,58 @@ public class PgActivityTimer extends PgActivity {
 
         mSeekBarDuration.setProgress(minValueDuration);
         mSeekBarTick.setProgress(minValueTick);
+
+        mSeekBarDuration.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                // Limit min workaround
+                if (i < minValueDuration){
+                    i = minValueDuration;
+                    mSeekBarDuration.setProgress(minValueDuration);
+                }
+
+                // Set text
+                String text = String.valueOf(i) + "s";
+                mTextViewDuration.setText(text);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+
+
+        });
+
+        mSeekBarTick.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                // Limit min workaround
+                if (i < minValueTick){
+                    i = minValueTick;
+                    mSeekBarTick.setProgress(minValueTick);
+                }
+
+                // Set text
+                String text = String.valueOf(i) + "s";
+                mTextViewTick.setText(text);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
 
     }
