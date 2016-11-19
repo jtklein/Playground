@@ -17,6 +17,7 @@ public class PgActivityUser extends PgActivityButtonMenu {
             new PgListViewButtonMenuItem(R.string.ui_dialog, PgActivityDialog.class),
             new PgListViewButtonMenuItem(R.string.ui_picker, PgActivityPicker.class),
             new PgListViewButtonMenuItem(R.string.ui_animations, PgActivityAnimations.class),
+            new PgListViewButtonMenuItem(R.string.ui_video, PgActivityVideo.class),
     };
 
     @Override
