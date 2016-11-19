@@ -167,6 +167,17 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".examples.PgActivityExamples"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".examples.PgActivityHigherLower"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+
     </application>
 
 </manifest>

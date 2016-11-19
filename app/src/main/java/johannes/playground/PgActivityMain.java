@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import johannes.playground.activities.PgActivityActivities;
 import johannes.playground.data.PgActivityData;
+import johannes.playground.examples.PgActivityExamples;
 import johannes.playground.intents.PgActivityIntents;
 import johannes.playground.persistance.PgActivityPersistance;
 import johannes.playground.user.PgActivityUser;
@@ -18,6 +19,7 @@ public class PgActivityMain extends PgActivityButtonMenu {
             new PgListViewButtonMenuItem(R.string.ui_data, PgActivityData.class),
             new PgListViewButtonMenuItem(R.string.ui_user, PgActivityUser.class),
             new PgListViewButtonMenuItem(R.string.ui_views, PgActivityViews.class),
+            new PgListViewButtonMenuItem(R.string.ui_examples, PgActivityExamples.class),
     };
 
     @Override

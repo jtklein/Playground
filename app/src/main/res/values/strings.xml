@@ -44,5 +44,7 @@
     <string name="data_phone_number">+49...</string>
     <string name="data_email_address">mymail@address.com</string>
     <string name="ui_loader">Loader</string>
+    <string name="ui_examples">Examples</string>
+    <string name="ui_higher_or_lower">Higher or Lower</string>
 
 </resources>
