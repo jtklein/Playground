@@ -19,5 +19,32 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <Button
+        style="@style/PrimaryButton"
+        android:text="Play"
+        android:id="@+id/buttonPlayAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        style="@style/PrimaryButton"
+        android:id="@+id/buttonPauseAudio"
+        android:text="Pause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <SeekBar
+        android:padding="@dimen/material_margin_first_tier"
+        android:id="@+id/seekBarVolumeAudio"
+        android:indeterminate="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <SeekBar
+        android:padding="@dimen/material_margin_first_tier"
+        android:id="@+id/seekBarScrubAudio"
+        android:indeterminate="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
