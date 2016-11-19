@@ -19,6 +19,36 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <LinearLayout
+        android:weightSum="6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <SeekBar
+            android:max="10"
+            android:layout_weight="5"
+            android:id="@+id/seekBarTimesTables"
+            android:padding="@dimen/material_margin_first_tier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewTimesTables"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_size_big"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listViewTimesTables"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
 
 
 </LinearLayout>
