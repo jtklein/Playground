@@ -62,10 +62,6 @@
     <!-- Custom image view -->
     <style name="PrimaryImageView">
         <item name="android:padding">@dimen/material_margin_first_tier</item>
-        <item name="android:layout_marginLeft">@dimen/material_margin_first_tier</item>
-        <item name="android:layout_marginRight">@dimen/material_margin_first_tier</item>
-        <item name="android:layout_marginTop">@dimen/material_margin_first_tier</item>
-        <item name="android:layout_marginBottom">@dimen/material_margin_first_tier</item>
     </style>
 
 </resources>
