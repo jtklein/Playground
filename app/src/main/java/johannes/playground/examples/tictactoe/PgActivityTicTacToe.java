@@ -47,6 +47,11 @@ public class PgActivityTicTacToe extends PgActivity {
         mImageView.setTranslationY(-1000f);
         mImageView.animate().translationYBy(1000f).setDuration(400);
 
+        // Set the status of the current field to the player status
+        mBoardStatus[tappedView] = getPlayer();
+
+        // Switch turns
+        redIsPlaying = !redIsPlaying;
 
     }
 
@@ -58,6 +63,13 @@ public class PgActivityTicTacToe extends PgActivity {
         return R.drawable.yellow;
     }
 
+    private int getPlayer() {
+        // Get player
+        if (redIsPlaying){
+            return 0;
+        }
+        return 1;
+    }
 
     private boolean fieldIsEmpty(int field){
         // Check if field is empty
