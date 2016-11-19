@@ -194,8 +194,7 @@
 
         <activity
             android:name=".user.PgActivityVideo"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+            android:exported="false" />
 
     </application>
 

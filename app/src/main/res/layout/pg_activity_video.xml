@@ -19,6 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
-
+    <VideoView
+        android:id="@+id/videoViewVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
