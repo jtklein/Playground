@@ -21,7 +21,7 @@
 
     <SeekBar
         android:progress="30"
-        android:max="600"
+        android:max="360"
         android:id="@+id/seekBarEggTimer"
         style="@style/PrimaryImageView"
         android:layout_width="match_parent"

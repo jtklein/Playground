@@ -1,5 +1,6 @@
 package johannes.playground.examples.eggtimer;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
@@ -44,7 +45,10 @@ public class PgActivityEggTimer extends PgActivity {
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                updateView(i);
+                // If user changes progress bar update view, else Timer does it
+                if (b){
+                    updateView(i);
+                }
             }
 
             @Override
@@ -62,16 +66,27 @@ public class PgActivityEggTimer extends PgActivity {
 
     private void startEggTimer() {
         // Get the selected duration from seek bar, start timer
-        long duration = mSeekBar.getProgress() * 1000;
+        long duration = mSeekBar.getProgress() * 1000 + 100;
         mEggTimer = new EggTimer(duration, timerTickInterval);
         mEggTimer.start();
 
     }
 
     private void updateView(int secondsToGo){
+        // Calculate remaining min and seconds
+        int minutes = secondsToGo / 60;
+        int seconds = secondsToGo - minutes * 60;
+
+        // Build String for text view
+        String secondText = String.valueOf(seconds);
+        if (seconds <= 9){
+            secondText = "0" + String.valueOf(seconds);
+        }
+        String text = String.valueOf(minutes) + ":" + secondText;
+
         // Update seek bar progress and text view depending on time remaining
         mSeekBar.setProgress(secondsToGo);
-        mTextView.setText(String.valueOf(secondsToGo));
+        mTextView.setText(text);
 
 
     }
@@ -92,6 +107,9 @@ public class PgActivityEggTimer extends PgActivity {
         public void onFinish() {
             updateView(0);
 
+            // Play sound on finish
+            MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.airhorn);
+            mp.start();
         }
     }
 }
