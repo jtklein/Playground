@@ -128,7 +128,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".data.PgActivityNetworking"
+            android:name=".data.networking.PgActivityNetworking"
             android:exported="false"
             android:screenOrientation="portrait" />
 
@@ -238,6 +238,11 @@
 
         <activity
             android:name=".examples.sumtrainer.PgActivitySumTrainer"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".data.networking.PgActivityDownloadString"
             android:exported="false"
             android:screenOrientation="portrait" />
 
