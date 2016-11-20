@@ -14,12 +14,24 @@ import johannes.playground.R;
  */
 public class PgActivitySumTrainer extends PgActivity {
 
+    private Button mButtonPlay = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_sum_trainer);
 
+        mButtonPlay = (Button) findViewById(R.id.buttonPlaySumTrainer);
+
+        mButtonPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Hide play button and start the game
+                mButtonPlay.setVisibility(View.INVISIBLE);
+                startGame();
+
+            }
+        });
 
     }
 
@@ -37,6 +49,7 @@ public class PgActivitySumTrainer extends PgActivity {
 
         @Override
         public void onTick(long l) {
+
         }
 
         @Override
