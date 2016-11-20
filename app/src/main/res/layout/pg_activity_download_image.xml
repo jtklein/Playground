@@ -19,6 +19,17 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
-    
+    <Button
+        android:id="@+id/buttonDownloadImage"
+        style="@style/PrimaryButton"
+        android:text="@string/ui_download_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        style="@style/PrimaryImageView"
+        android:id="@+id/imageViewDownloadImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

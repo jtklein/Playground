@@ -21,8 +21,6 @@ import johannes.playground.R;
  */
 public class PgActivityDownloadString extends PgActivity {
 
-    private DownloadStringAsyncTask mTask = null;
-
     private static String url = "https://www.ecowebhosting.co.uk/";
 
     @Override
@@ -30,11 +28,11 @@ public class PgActivityDownloadString extends PgActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_download_string);
 
-        mTask = new DownloadStringAsyncTask();
+        DownloadStringAsyncTask task = new DownloadStringAsyncTask();
 
         String result = null;
         try {
-            result = mTask.execute(url).get();
+            result = task.execute(url).get();
 
         } catch (InterruptedException e) {
             Log.e(this.getClass().getSimpleName(), "Error interruption in Async Loading of String");
