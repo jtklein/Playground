@@ -3,6 +3,7 @@ package johannes.playground.examples.sumtrainer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -22,7 +23,7 @@ public class PgActivitySumTrainer extends PgActivity {
     private TextView mTextViewScore = null;
     private TextView mTextViewTime = null;
 
-    private LinearLayout mContainerAnswers = null;
+    private GridLayout mContainerAnswers = null;
     private Button[] mAnswerButtons = null;
 
     private LinearLayout mContainerFinish = null;
@@ -52,7 +53,7 @@ public class PgActivitySumTrainer extends PgActivity {
         mTextViewScore = (TextView) findViewById(R.id.textViewPointsSumTrainer);
         mTextViewTime = (TextView) findViewById(R.id.textViewTimeRemainingSumTrainer);
 
-        mContainerAnswers = (LinearLayout) findViewById(R.id.containerAnswersSumTrainer);
+        mContainerAnswers = (GridLayout) findViewById(R.id.containerAnswersSumTrainer);
         mContainerFinish = (LinearLayout) findViewById(R.id.containerRoundEndSumTrainer);
         mTextViewFinalScore = (TextView) findViewById(R.id.textViewEndScoreSumTrainer);
 
