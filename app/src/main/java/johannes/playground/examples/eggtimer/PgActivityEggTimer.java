@@ -25,6 +25,8 @@ public class PgActivityEggTimer extends PgActivity {
 
     private static final int timerTickInterval = 1000;
 
+    private static boolean timerIsActive = false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,12 @@ public class PgActivityEggTimer extends PgActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startEggTimer();
+
+                if (!timerIsActive){
+                    startEggTimer();
+                } else {
+                    cancelEggTimer();
+                }
 
             }
         });
@@ -64,11 +71,26 @@ public class PgActivityEggTimer extends PgActivity {
 
     }
 
+    private void cancelEggTimer(){
+        // Cancel the timer
+        mEggTimer.cancel();
+        timerIsActive = false;
+
+        // Change views to timer inactive state
+        mButton.setText("Start");
+        mSeekBar.setEnabled(true);
+    }
+
     private void startEggTimer() {
         // Get the selected duration from seek bar, start timer
         long duration = mSeekBar.getProgress() * 1000 + 100;
         mEggTimer = new EggTimer(duration, timerTickInterval);
         mEggTimer.start();
+        timerIsActive = true;
+
+        // Change views to timer active state
+        mButton.setText("Stop");
+        mSeekBar.setEnabled(false);
 
     }
 
