@@ -14,7 +14,7 @@ import johannes.playground.R;
 public class PgActivityNetworking extends PgActivityButtonMenu {
 
     private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
-            new PgListViewButtonMenuItem(R.string.ui_parse_json, PgActivityDownloadString.class),
+            new PgListViewButtonMenuItem(R.string.ui_download_string, PgActivityDownloadString.class),
     };
 
     @Override
