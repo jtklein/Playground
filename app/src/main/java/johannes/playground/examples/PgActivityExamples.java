@@ -5,6 +5,7 @@ import android.os.Bundle;
 import johannes.playground.PgActivityButtonMenu;
 import johannes.playground.PgListViewButtonMenuItem;
 import johannes.playground.R;
+import johannes.playground.examples.eggtimer.PgActivityEggTimer;
 import johannes.playground.examples.higherlower.PgActivityHigherLower;
 import johannes.playground.examples.numbershapes.PgActivityNumberShapes;
 import johannes.playground.examples.phrasebook.PgActivityPhraseBook;
@@ -22,6 +23,7 @@ public class PgActivityExamples extends PgActivityButtonMenu {
         new PgListViewButtonMenuItem(R.string.ui_tic_tac_toe, PgActivityTicTacToe.class),
         new PgListViewButtonMenuItem(R.string.ui_phrase_book, PgActivityPhraseBook.class),
         new PgListViewButtonMenuItem(R.string.ui_times_tables, PgActivityTimesTables.class),
+        new PgListViewButtonMenuItem(R.string.ui_egg_timer, PgActivityEggTimer.class),
 
     };
 
