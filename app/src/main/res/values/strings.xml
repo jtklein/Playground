@@ -60,5 +60,6 @@
     <string name="ui_egg_timer">Egg Timer</string>
     <string name="ui_sum_trainer">Sum Trainer</string>
     <string name="ui_download_string">Download String</string>
+    <string name="ui_download_image">Download Image</string>
 
 </resources>
