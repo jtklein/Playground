@@ -25,10 +25,10 @@
         android:layout_height="wrap_content">
 
         <SeekBar
+            style="@style/PrimarySeekBar"
             android:max="10"
             android:layout_weight="5"
             android:id="@+id/seekBarTimesTables"
-            android:padding="@dimen/material_margin_first_tier"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
 

@@ -73,4 +73,10 @@
         <item name="android:padding">@dimen/material_margin_first_tier</item>
     </style>
 
+    <!-- Custom seek bar style -->
+    <style name="PrimarySeekBar" parent="@android:style/Widget.Material.SeekBar">
+        <item name="android:padding">@dimen/material_margin_first_tier</item>
+        <item name="android:indeterminate">false</item>
+    </style>
+
 </resources>

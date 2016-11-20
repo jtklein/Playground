@@ -34,16 +34,14 @@
         android:layout_height="wrap_content" />
 
     <SeekBar
-        android:padding="@dimen/material_margin_first_tier"
+        style="@style/PrimarySeekBar"
         android:id="@+id/seekBarVolumeAudio"
-        android:indeterminate="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <SeekBar
-        android:padding="@dimen/material_margin_first_tier"
+        style="@style/PrimarySeekBar"
         android:id="@+id/seekBarScrubAudio"
-        android:indeterminate="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
