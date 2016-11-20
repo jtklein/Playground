@@ -55,5 +55,7 @@
     <string name="ui_times_tables">Times Tables</string>
     <string name="ui_architecture">Architecture</string>
     <string name="ui_timer">Timer</string>
+    <string name="ui_navigation">Navigation</string>
+    <string name="ui_tabs">Tabs</string>
 
 </resources>

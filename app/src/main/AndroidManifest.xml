@@ -221,6 +221,16 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".navigation.PgActivityNavigation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".navigation.tabs.PgActivityTabs"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
