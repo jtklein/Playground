@@ -9,6 +9,7 @@ import johannes.playground.examples.eggtimer.PgActivityEggTimer;
 import johannes.playground.examples.higherlower.PgActivityHigherLower;
 import johannes.playground.examples.numbershapes.PgActivityNumberShapes;
 import johannes.playground.examples.phrasebook.PgActivityPhraseBook;
+import johannes.playground.examples.sumtrainer.PgActivitySumTrainer;
 import johannes.playground.examples.tictactoe.PgActivityTicTacToe;
 import johannes.playground.examples.timestables.PgActivityTimesTables;
 
@@ -24,6 +25,7 @@ public class PgActivityExamples extends PgActivityButtonMenu {
         new PgListViewButtonMenuItem(R.string.ui_phrase_book, PgActivityPhraseBook.class),
         new PgListViewButtonMenuItem(R.string.ui_times_tables, PgActivityTimesTables.class),
         new PgListViewButtonMenuItem(R.string.ui_egg_timer, PgActivityEggTimer.class),
+        new PgListViewButtonMenuItem(R.string.ui_sum_trainer, PgActivitySumTrainer.class),
 
     };
 
