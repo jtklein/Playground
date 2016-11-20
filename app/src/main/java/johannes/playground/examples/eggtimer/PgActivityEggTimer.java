@@ -11,7 +11,7 @@ import johannes.playground.R;
  */
 public class PgActivityEggTimer extends PgActivity {
 
-    
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

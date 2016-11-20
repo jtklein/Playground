@@ -19,11 +19,38 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
-    <TextView
-        android:id="@+id/textViewEggTimer"
-        style="@style/HeaderTextView"
-        android:text="0:00"
+    <SeekBar
+        android:id="@+id/seekBarEggTimer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageViewEggTimer"
+            android:src="@drawable/egg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:id="@+id/textViewEggTimer"
+            style="@style/HeaderTextView"
+            android:text="0:00"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            style="@style/PrimaryButton"
+            android:text="Start"
+            android:layout_alignBottom="@id/imageViewEggTimer"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
 
 </LinearLayout>
