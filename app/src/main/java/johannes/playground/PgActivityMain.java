@@ -15,13 +15,13 @@ import johannes.playground.views.PgActivityViews;
 public class PgActivityMain extends PgActivityButtonMenu {
 
     private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
+            new PgListViewButtonMenuItem(R.string.ui_examples, PgActivityExamples.class),
             new PgListViewButtonMenuItem(R.string.ui_activities, PgActivityActivities.class),
             new PgListViewButtonMenuItem(R.string.ui_intents, PgActivityIntents.class),
             new PgListViewButtonMenuItem(R.string.ui_persistance, PgActivityPersistance.class),
             new PgListViewButtonMenuItem(R.string.ui_data, PgActivityData.class),
             new PgListViewButtonMenuItem(R.string.ui_user, PgActivityUser.class),
             new PgListViewButtonMenuItem(R.string.ui_views, PgActivityViews.class),
-            new PgListViewButtonMenuItem(R.string.ui_examples, PgActivityExamples.class),
             new PgListViewButtonMenuItem(R.string.ui_architecture, PgActivityArchitecture.class),
             new PgListViewButtonMenuItem(R.string.ui_navigation, PgActivityNavigation.class),
     };

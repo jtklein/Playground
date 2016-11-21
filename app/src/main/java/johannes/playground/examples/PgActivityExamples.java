@@ -20,14 +20,14 @@ import johannes.playground.examples.timestables.PgActivityTimesTables;
 public class PgActivityExamples extends PgActivityButtonMenu {
 
     private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
-        new PgListViewButtonMenuItem(R.string.ui_higher_or_lower, PgActivityHigherLower.class),
-        new PgListViewButtonMenuItem(R.string.ui_number_shapes, PgActivityNumberShapes.class),
-        new PgListViewButtonMenuItem(R.string.ui_tic_tac_toe, PgActivityTicTacToe.class),
-        new PgListViewButtonMenuItem(R.string.ui_phrase_book, PgActivityPhraseBook.class),
-        new PgListViewButtonMenuItem(R.string.ui_times_tables, PgActivityTimesTables.class),
-        new PgListViewButtonMenuItem(R.string.ui_egg_timer, PgActivityEggTimer.class),
-        new PgListViewButtonMenuItem(R.string.ui_sum_trainer, PgActivitySumTrainer.class),
-        new PgListViewButtonMenuItem(R.string.ui_celebrity_guess, PgActivityCelebrityGuess.class),
+            new PgListViewButtonMenuItem(R.string.ui_celebrity_guess, PgActivityCelebrityGuess.class),
+            new PgListViewButtonMenuItem(R.string.ui_higher_or_lower, PgActivityHigherLower.class),
+            new PgListViewButtonMenuItem(R.string.ui_number_shapes, PgActivityNumberShapes.class),
+            new PgListViewButtonMenuItem(R.string.ui_tic_tac_toe, PgActivityTicTacToe.class),
+            new PgListViewButtonMenuItem(R.string.ui_phrase_book, PgActivityPhraseBook.class),
+            new PgListViewButtonMenuItem(R.string.ui_times_tables, PgActivityTimesTables.class),
+            new PgListViewButtonMenuItem(R.string.ui_egg_timer, PgActivityEggTimer.class),
+            new PgListViewButtonMenuItem(R.string.ui_sum_trainer, PgActivitySumTrainer.class),
 
     };
 
