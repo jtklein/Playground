@@ -47,5 +47,15 @@ public class PgActivityBasicMap extends FragmentActivity implements OnMapReadyCa
 
         mMap.addMarker(new MarkerOptions().position(place).title("Marker in Sydney"));
 
+        // Custom markering
+        LatLng placeTwo = new LatLng(49.1233,8.7078);
+        mMap.addMarker(new MarkerOptions().position(placeTwo).
+                icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        // Zoom goes from one to twenty
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(place, 10));
+
+        // Set map type with satellite
+        mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
     }
 }
