@@ -25,6 +25,17 @@
         <item name="android:layout_marginBottom">@dimen/material_margin_first_tier</item>
     </style>
 
+    <!-- Custom small button style -->
+    <style name="PrimarySmallButton" parent="@style/Button">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:layout_marginTop">@dimen/material_margin_half_first_tier</item>
+        <item name="android:layout_marginLeft">@dimen/material_margin_half_first_tier</item>
+        <item name="android:layout_marginRight">@dimen/material_margin_half_first_tier</item>
+        <item name="android:layout_marginBottom">@dimen/material_margin_half_first_tier</item>
+    </style>
+
     <!-- Custom primary edit text style -->
     <style name="PrimaryEditText" parent="@android:style/Widget.EditText">
         <item name="android:textColor">@color/colorBlack</item>
