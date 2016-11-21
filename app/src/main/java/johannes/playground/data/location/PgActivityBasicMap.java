@@ -1,7 +1,10 @@
 package johannes.playground.data.location;
 
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -11,6 +14,10 @@ import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 import johannes.playground.R;
 
@@ -57,5 +64,28 @@ public class PgActivityBasicMap extends FragmentActivity implements OnMapReadyCa
 
         // Set map type with satellite
         mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+
+        try {
+            List<Address> addressList = geocoder.getFromLocation(placeTwo.latitude, placeTwo.longitude, 1);
+
+            if (addressList != null && addressList.size() > 0){
+
+                Address address = addressList.get(0);
+
+                Log.i("Address", addressList.get(0).toString());
+
+                for (int i = 0; i <= address.getMaxAddressLineIndex(); i++){
+
+                    Log.i("Address", "" + address.getAddressLine(i));
+
+                }
+            }
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
     }
 }
