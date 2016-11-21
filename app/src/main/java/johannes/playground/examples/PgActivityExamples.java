@@ -5,6 +5,7 @@ import android.os.Bundle;
 import johannes.playground.PgActivityButtonMenu;
 import johannes.playground.PgListViewButtonMenuItem;
 import johannes.playground.R;
+import johannes.playground.examples.celebrityguess.PgActivityCelebrityGuess;
 import johannes.playground.examples.eggtimer.PgActivityEggTimer;
 import johannes.playground.examples.higherlower.PgActivityHigherLower;
 import johannes.playground.examples.numbershapes.PgActivityNumberShapes;
@@ -26,6 +27,7 @@ public class PgActivityExamples extends PgActivityButtonMenu {
         new PgListViewButtonMenuItem(R.string.ui_times_tables, PgActivityTimesTables.class),
         new PgListViewButtonMenuItem(R.string.ui_egg_timer, PgActivityEggTimer.class),
         new PgListViewButtonMenuItem(R.string.ui_sum_trainer, PgActivitySumTrainer.class),
+        new PgListViewButtonMenuItem(R.string.ui_celebrity_guess, PgActivityCelebrityGuess.class),
 
     };
 
