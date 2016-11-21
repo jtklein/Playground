@@ -29,6 +29,37 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+        <TextView
+            android:id="@+id/zzz"
+            style="@style/HeaderTextView"
+            android:text="Enter a city:"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editTextWeather"
+            style="@style/PrimaryEditText"
+            android:layout_below="@id/zzz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/buttonWeather"
+            style="@style/PrimaryButton"
+            android:text="What&apos;s the weather there?"
+            android:layout_below="@id/editTextWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewResultWeather"
+            style="@style/HeaderTextView"
+            android:layout_below="@id/buttonWeather"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </RelativeLayout>
 
 </LinearLayout>
