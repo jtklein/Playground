@@ -13,7 +13,7 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality. 
     -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Used features -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!-- Used features -->
     <application
@@ -36,77 +36,96 @@
             android:name=".intents.PgActivityImplicitIntents"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".intents.PgActivityIntents"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".intents.PgActivitySendIntentExtras"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".intents.PgActivityReceiveIntentExtras"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".activities.PgActivityActivities"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".activities.PgActivityLifecycle"
             android:exported="false" />
+
         <activity
             android:name=".views.PgActivityViews"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".views.PgActivityListView"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".persistance.PgActivityPersistance"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".data.PgActivityData"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".data.PgActivityParseJSON"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".persistance.PgActivitySharedPreferences"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".persistance.PgActivityFiles"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".activities.PgActivityFragmentLifecycle"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".data.PgActivityControlFlow"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".user.PgActivityUser"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".user.PgActivityToast"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".user.PgActivityNotification"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".intents.PgActivityIntentRequest"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".intents.PgActivityIntentRequestSelection"
             android:exported="false"
@@ -266,6 +285,7 @@
             android:name=".examples.weatherjson.PgActivityWeatherJSON"
             android:exported="false"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".data.location.PgActivityLocation"
             android:exported="false"
@@ -285,7 +305,15 @@
 
         <activity
             android:name=".data.location.PgActivityBasicMap"
-            android:label="@string/title_activity_pg_basic_map"></activity>
+            android:label="@string/title_activity_pg_basic_map" />
+
+
+        <activity
+            android:name=".data.location.PgActivityLocationAwareness"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+
     </application>
 
 </manifest>

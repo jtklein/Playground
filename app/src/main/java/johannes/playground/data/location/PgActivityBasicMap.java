@@ -45,10 +45,10 @@ public class PgActivityBasicMap extends FragmentActivity implements OnMapReadyCa
         // Add a marker in place and move the camera
         LatLng place = new LatLng(49.1232698,8.707743);
 
-        mMap.addMarker(new MarkerOptions().position(place).title("Marker in Sydney"));
+        mMap.addMarker(new MarkerOptions().position(place).title("Home"));
 
         // Custom markering
-        LatLng placeTwo = new LatLng(49.1233,8.7078);
+        LatLng placeTwo = new LatLng(49.1234,8.7070);
         mMap.addMarker(new MarkerOptions().position(placeTwo).
                 icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 

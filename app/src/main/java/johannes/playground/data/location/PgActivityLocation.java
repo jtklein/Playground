@@ -14,6 +14,7 @@ public class PgActivityLocation extends PgActivityButtonMenu {
 
     private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
             // Full content
+            new PgListViewButtonMenuItem(R.string.ui_location_awareness, PgActivityLocationAwareness.class),
             new PgListViewButtonMenuItem(R.string.ui_basic_map, PgActivityBasicMap.class),
     };
 
