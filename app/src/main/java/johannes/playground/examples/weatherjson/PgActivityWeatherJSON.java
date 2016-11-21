@@ -7,7 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import johannes.playground.L;
 import johannes.playground.PgActivity;
+import johannes.playground.PgImplicitIntentFactory;
 import johannes.playground.R;
 
 /**
@@ -18,6 +20,8 @@ public class PgActivityWeatherJSON extends PgActivity {
     private EditText mEditText;
     private TextView mTextView;
     private Button mButton;
+
+    private String baseURL = "http://api.openweathermap.org/data/2.5/weather?q=";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,9 +42,16 @@ public class PgActivityWeatherJSON extends PgActivity {
 
                     city = mEditText.getText().toString();
                     mTextView.setText(city);
+
+                    String combinedUrl = baseURL + city;
+                    new PgImplicitIntentFactory(getApplicationContext()).browserIntent(combinedUrl);
+
+                    // TODO get API key
+
+                } else {
+                    L.t(getApplicationContext(), "Please input something.");
+
                 }
-
-
             }
         });
 
