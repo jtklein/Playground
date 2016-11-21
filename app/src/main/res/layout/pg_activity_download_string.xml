@@ -19,4 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_size_big" />
 
+    <ProgressBar
+        android:visibility="gone"
+        style="@style/PrimaryHorizontalProgressBar"
+        android:id="@+id/progressBarDownloadImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

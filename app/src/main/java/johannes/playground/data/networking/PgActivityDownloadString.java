@@ -4,6 +4,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,34 +23,36 @@ import johannes.playground.R;
  */
 public class PgActivityDownloadString extends PgActivity {
 
+    private ProgressBar mProgressBar = null;
+
     private static String url = "https://www.ecowebhosting.co.uk/";
+
+    private static String mResult = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_download_string);
 
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBarDownloadImage);
+
         DownloadStringAsyncTask task = new DownloadStringAsyncTask();
 
-        String result = null;
-        try {
-            result = task.execute(url).get();
+        task.execute(url);
 
-        } catch (InterruptedException e) {
-            Log.e(this.getClass().getSimpleName(), "Error interruption in Async Loading of String");
-            e.printStackTrace();
-
-        } catch (ExecutionException e) {
-            Log.e(this.getClass().getSimpleName(), "Error in executing Async loading of String");
-            e.printStackTrace();
-        }
     }
 
-    public class DownloadStringAsyncTask extends AsyncTask<String, Void, String>{
+    public class DownloadStringAsyncTask extends AsyncTask<String, Integer, String>{
 
         private String result = "";
         private URL url = null;
         private HttpURLConnection connection = null;
+
+        @Override
+        protected void onPreExecute() {
+            // Make progress layout visible
+            mProgressBar.setVisibility(View.VISIBLE);
+        }
 
         @Override
         protected String doInBackground(String... strings) {
@@ -84,6 +88,15 @@ public class PgActivityDownloadString extends PgActivity {
             }
 
             return "Failed!";
+        }
+
+        @Override
+        protected void onPostExecute(String aString) {
+            // Make progress layout invisible
+            mProgressBar.setVisibility(View.GONE);
+
+            mResult = aString;
+
         }
     }
 }
