@@ -13,6 +13,7 @@ import johannes.playground.examples.phrasebook.PgActivityPhraseBook;
 import johannes.playground.examples.sumtrainer.PgActivitySumTrainer;
 import johannes.playground.examples.tictactoe.PgActivityTicTacToe;
 import johannes.playground.examples.timestables.PgActivityTimesTables;
+import johannes.playground.examples.weatherjson.PgActivityWeatherJSON;
 
 /**
  * Created by johannesklein on 19.11.16.
@@ -20,6 +21,7 @@ import johannes.playground.examples.timestables.PgActivityTimesTables;
 public class PgActivityExamples extends PgActivityButtonMenu {
 
     private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
+            new PgListViewButtonMenuItem(R.string.ui_weather_json, PgActivityWeatherJSON.class),
             new PgListViewButtonMenuItem(R.string.ui_celebrity_guess, PgActivityCelebrityGuess.class),
             new PgListViewButtonMenuItem(R.string.ui_higher_or_lower, PgActivityHigherLower.class),
             new PgListViewButtonMenuItem(R.string.ui_number_shapes, PgActivityNumberShapes.class),
