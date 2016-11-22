@@ -88,7 +88,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".persistance.PgActivitySharedPreferences"
+            android:name=".persistance.sharedpreferences.PgActivitySharedPreferences"
             android:exported="false"
             android:screenOrientation="portrait" />
 
