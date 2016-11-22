@@ -43,5 +43,6 @@ public class PgActivityHikerWatch extends PgActivityPermission {
         setContentView(R.layout.pg_activity_hiker_watch);
 
 
+
     }
 }
