@@ -9,10 +9,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
 import java.util.List;
@@ -72,6 +70,36 @@ public class PgActivityHikerWatch extends PgActivityPermission {
         mManager = null;
 
     }
+
+    private void updateViews() {
+
+        mTextViewLatitude.setText(String.valueOf(currentLocation.getLatitude()));
+        mTextViewLongitude.setText(String.valueOf(currentLocation.getLongitude()));
+
+        mTextViewAccuracy.setText(String.valueOf(currentLocation.getAccuracy()));
+        mTextViewAltitude.setText(String.valueOf(currentLocation.getAltitude()));
+
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+
+        try {
+            List<Address> addressList = geocoder.getFromLocation(currentLocation.getLatitude(), currentLocation.getLongitude(), 1);
+
+            if (addressList != null && addressList.size() > 0){
+                Address address = addressList.get(0);
+                mTextViewAddress.setText("");
+
+                for (int i = 0; i <= address.getMaxAddressLineIndex(); i++){
+                    String text = mTextViewAddress.getText().toString();
+                    mTextViewAddress.setText(text + "\n" + address.getAddressLine(i));
+
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+
     private class HikerWatcher implements LocationListener {
 
         @Override
