@@ -58,6 +58,14 @@ public class PgActivityHackerNews extends PgActivity {
         mAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mTitles);
 
         mListView.setAdapter(mAdapter);
+
+        articlesDB = this.openOrCreateDatabase("articles", MODE_PRIVATE, null);
+
+        articlesDB.execSQL("DROP TABLE articles");
+
+        articlesDB.execSQL("CREATE TABLE IF NOT EXISTS articles " +
+                "(id INTEGER PRIMARY KEY, articleID INTEGER, title VARCHAR, url VARCHAR)");
+
         // Make RESTful webservice call using AsyncHttpClient object
         String query = urlTopStories + queryString;
         Log.i(this.getClass().getSimpleName(), query);
