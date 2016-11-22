@@ -60,4 +60,16 @@ public class PgActivityHikerWatch extends PgActivityPermission {
         }
 
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (super.handlePermissions(Manifest.permission.ACCESS_FINE_LOCATION)){
+            // Remove location listener
+            mManager.removeUpdates(mListener);
+        }
+        mManager = null;
+
+    }
 }
