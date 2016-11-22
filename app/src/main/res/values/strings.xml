@@ -69,5 +69,6 @@
     <string name="ui_location_awareness">Location Awareness</string>
     <string name="ui_hiker_watch">Hiker Watch</string>
     <string name="ui_sql_database">SQL Database</string>
+    <string name="ui_webview">Webview</string>
 
 </resources>
