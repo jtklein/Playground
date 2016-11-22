@@ -37,6 +37,9 @@ public class PgActivityHackerNews extends PgActivity {
 
     private ArrayList<String> mTitles = new ArrayList<String>();
     private ArrayList<String> mUrls = new ArrayList<String>();
+
+    private SQLiteDatabase articlesDB = null;
+
     private static int numberItems = 20;
 
     private static String urlTopStories = "topstories";
@@ -73,6 +76,33 @@ public class PgActivityHackerNews extends PgActivity {
         mProgressBar.setVisibility(View.VISIBLE);
 
         PgHackerNewsRestClient.get(urlTopStories + queryString, null, new DownloadTopStoriesHandler());
+
+        updateListView();
+
+    }
+
+    public void updateListView(){
+
+        Cursor c = articlesDB.rawQuery("SELECT * FROM articles", null);
+
+        int titleIndex = c.getColumnIndex("title");
+        int contentIndex = c.getColumnIndex("url");
+
+        if (c.moveToFirst()){
+
+            mTitles.clear();
+            mUrls.clear();
+
+            do {
+                mTitles.add(c.getString(titleIndex));
+                mUrls.add(c.getString(contentIndex));
+            } while (c.moveToNext());
+
+            mAdapter.notifyDataSetChanged();
+
+        }
+    }
+
     private class DownloadTopStoriesHandler extends JsonHttpResponseHandler {
 
         @Override
