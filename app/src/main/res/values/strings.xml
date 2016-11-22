@@ -68,5 +68,6 @@
     <string name="title_activity_pg_basic_map">Map</string>
     <string name="ui_location_awareness">Location Awareness</string>
     <string name="ui_hiker_watch">Hiker Watch</string>
+    <string name="ui_sql_database">SQL Database</string>
 
 </resources>
