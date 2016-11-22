@@ -42,7 +42,22 @@ public class PgActivityHikerWatch extends PgActivityPermission {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pg_activity_hiker_watch);
 
+        mTextViewLatitude  = (TextView) findViewById(R.id.textViewLatitudeHikerWatch);
+        mTextViewLongitude = (TextView) findViewById(R.id.textViewLongitudeHikerWatch);
+        mTextViewAccuracy  = (TextView) findViewById(R.id.textViewAccuracyHikerWatch);
+        mTextViewAltitude  = (TextView) findViewById(R.id.textViewAltitudeHikerWatch);
+        mTextViewAddress   = (TextView) findViewById(R.id.textViewAddressHikerWatch);
 
+        mManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        mListener = new HikerWatcher();
+
+        if (super.handlePermissions(Manifest.permission.ACCESS_FINE_LOCATION)){
+            // Get last known location, update views then follow location changes
+            currentLocation = mManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            updateViews();
+            mManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mListener);
+        }
 
     }
 }
