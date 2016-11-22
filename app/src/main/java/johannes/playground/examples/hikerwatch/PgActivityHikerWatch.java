@@ -72,4 +72,27 @@ public class PgActivityHikerWatch extends PgActivityPermission {
         mManager = null;
 
     }
+    private class HikerWatcher implements LocationListener {
+
+        @Override
+        public void onLocationChanged(Location location) {
+            currentLocation = location;
+            updateViews();
+        }
+
+        @Override
+        public void onStatusChanged(String s, int i, Bundle bundle) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String s) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String s) {
+
+        }
+    }
 }
