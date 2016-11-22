@@ -50,6 +50,8 @@ public class PgActivityHackerNews extends PgActivity {
     private static String articleTitle = null;
     private static String articleUrl = null;
 
+    public static final String ITEM_URL_KEY = "ITEM_URL_KEY";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +63,14 @@ public class PgActivityHackerNews extends PgActivity {
         mAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mTitles);
 
         mListView.setAdapter(mAdapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(view.getContext(), PgActivityHackerNewsWebview.class);
+                intent.putExtra(ITEM_URL_KEY, mUrls.get(i));
+                startActivity(intent);
+            }
+        });
 
         articlesDB = this.openOrCreateDatabase("articles", MODE_PRIVATE, null);
 

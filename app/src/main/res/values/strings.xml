@@ -70,5 +70,6 @@
     <string name="ui_hiker_watch">Hiker Watch</string>
     <string name="ui_sql_database">SQL Database</string>
     <string name="ui_webview">Webview</string>
+    <string name="ui_hacker_news">Hacker News</string>
 
 </resources>
