@@ -8,6 +8,7 @@ import johannes.playground.R;
 import johannes.playground.examples.celebrityguess.PgActivityCelebrityGuess;
 import johannes.playground.examples.eggtimer.PgActivityEggTimer;
 import johannes.playground.examples.higherlower.PgActivityHigherLower;
+import johannes.playground.examples.hikerwatch.PgActivityHikerWatch;
 import johannes.playground.examples.numbershapes.PgActivityNumberShapes;
 import johannes.playground.examples.phrasebook.PgActivityPhraseBook;
 import johannes.playground.examples.sumtrainer.PgActivitySumTrainer;
@@ -21,6 +22,7 @@ import johannes.playground.examples.weatherjson.PgActivityWeatherJSON;
 public class PgActivityExamples extends PgActivityButtonMenu {
 
     private PgListViewButtonMenuItem[] mData = new PgListViewButtonMenuItem[]{
+            new PgListViewButtonMenuItem(R.string.ui_hiker_watch, PgActivityHikerWatch.class),
             new PgListViewButtonMenuItem(R.string.ui_weather_json, PgActivityWeatherJSON.class),
             new PgListViewButtonMenuItem(R.string.ui_celebrity_guess, PgActivityCelebrityGuess.class),
             new PgListViewButtonMenuItem(R.string.ui_higher_or_lower, PgActivityHigherLower.class),

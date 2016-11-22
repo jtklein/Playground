@@ -307,9 +307,13 @@
             android:name=".data.location.PgActivityBasicMap"
             android:label="@string/title_activity_pg_basic_map" />
 
-
         <activity
             android:name=".data.location.PgActivityLocationAwareness"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".examples.hikerwatch.PgActivityHikerWatch"
             android:exported="false"
             android:screenOrientation="portrait" />
 
