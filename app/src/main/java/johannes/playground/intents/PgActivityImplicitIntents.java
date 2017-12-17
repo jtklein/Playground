@@ -57,6 +57,11 @@ public class PgActivityImplicitIntents extends PgActivity {
                         // take picture
                         implicitIntent = new Intent("android.media.action.IMAGE_CAPTURE");
                         break;
+                    case 4:
+                        // testing intent
+                        implicitIntent = Intent.makeMainSelectorActivity("android.intent.action.MAIN","android.intent.category.APP_EMAIL");
+
+                        break;
                 }
 
                 if (implicitIntent != null){

@@ -5,6 +5,7 @@
         <item>Make call</item>
         <item>Open Map</item>
         <item>Take picture</item>
+        <item>Test intent</item>
     </string-array>
 
     <string-array name="json">

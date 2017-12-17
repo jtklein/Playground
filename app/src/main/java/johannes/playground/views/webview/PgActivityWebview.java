@@ -24,19 +24,19 @@ public class PgActivityWebview extends PgActivity {
         mWebView = (WebView) findViewById(R.id.webView);
 
         // Disable JavaScript
-        mWebView.getSettings().setJavaScriptEnabled(false);
+        mWebView.getSettings().setJavaScriptEnabled(true);
 
         // Set new webclient
         mWebView.setWebViewClient(new WebViewClient());
 
         // Load Url
-        // mWebView.loadUrl("http://www.google.com");
+        mWebView.loadUrl("http://test.bionote.xyz");
 
         // Build html string
         String html = "<html><body><h1>Hi there!</h1><p>This is my website.</p></body></html>";
 
         // Load html from data
-        mWebView.loadData(html, "text/html", "UTF-8");
+        // mWebView.loadData(html, "text/html", "UTF-8");
 
     }
 }

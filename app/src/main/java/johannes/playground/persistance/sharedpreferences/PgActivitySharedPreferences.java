@@ -61,9 +61,6 @@ public class PgActivitySharedPreferences extends PgActivity {
 
             updateViews();
         }
-
-
-
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

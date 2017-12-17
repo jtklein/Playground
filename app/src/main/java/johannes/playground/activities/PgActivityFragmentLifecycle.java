@@ -22,6 +22,5 @@ public class PgActivityFragmentLifecycle extends PgActivity {
                     .add(R.id.containerExampleFragment, new PgFragmentLifecycle())
                     .commit();
         }
-
     }
 }

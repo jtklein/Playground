@@ -72,7 +72,6 @@ public class PgListViewExampleAdapter extends ArrayAdapter<PgListViewExampleItem
         holder.textViewHeader.setOnClickListener(ExampleListener);
         holder.textViewHeader.setTag(position);
 
-
         // Return the view
         return row;
     }

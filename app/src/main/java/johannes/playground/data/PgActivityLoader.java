@@ -136,6 +136,7 @@ public class PgActivityLoader extends PgActivity implements LoaderManager.Loader
             --> Runs on UI Thread
          */
 
+
         @Override
         public void deliverResult(List<String> data) {
             // Save the data for later retrieval
